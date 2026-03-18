@@ -11,6 +11,13 @@ export enum EstadoPersonajes {
   RobotSustituto = 'Robot-sustituto',
 }
 
+export enum AfilaicionPersonajes {
+  FedGalactica = 'Federación Galáctica',
+  ConsejoRicks = 'Consejo de Ricks',
+  Smiths = 'Familia Smith',
+  Independiente = 'Independiente',
+}
+
 export enum TipoEspecies {
   Humanoide = 'Humanoide',
   Amorfo = 'Amorfo',
