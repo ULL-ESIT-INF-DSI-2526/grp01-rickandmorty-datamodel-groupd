@@ -20,7 +20,7 @@ export class Dimension implements IntDimensiones {
 
   validId(id: string): void {
     if (Dimension.ids_registrados.has(id))
-      throw new Error(`Este id (${id}) ya ha sido regsitrado`);
+      throw new Error(`Este id (${id}) ya ha sido registrado`);
     const regex = /^[A-Z]-?[A-Za-z0-9α-ωΑ-Ω]+$/;
     if (!regex.test(id))
       throw new Error(`Este id (${id}) tiene un formato invalido`);
