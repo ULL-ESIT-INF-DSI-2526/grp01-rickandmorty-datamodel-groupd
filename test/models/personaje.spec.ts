@@ -1,14 +1,14 @@
 import { describe, test, expect } from 'vitest';
-import { Nivel } from '../src/models/niveles';
+import { Nivel } from '../../src/models/niveles';
 import {
   AfilaicionPersonajes,
   EstadoDimensiones,
   EstadoPersonajes,
   TipoEspecies,
-} from '../src/models/tipos';
-import { Personaje } from '../src/models/classes/personajes';
-import { Dimension } from '../src/models/classes/dimension';
-import { Especies } from '../src/models/classes/especie';
+} from '../../src/models/tipos';
+import { Personaje } from '../../src/models/classes/personajes';
+import { Dimension } from '../../src/models/classes/dimension';
+import { Especies } from '../../src/models/classes/especie';
 
 describe('Test para comprobar el funcionamiento de la clase Personaje', () => {
   const dim1 = new Dimension(

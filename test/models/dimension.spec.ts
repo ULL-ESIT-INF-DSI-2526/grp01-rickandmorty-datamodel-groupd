@@ -1,7 +1,7 @@
 import { describe, test, expect } from 'vitest';
-import { Dimension } from '../src/models/classes/dimension';
-import { Nivel } from '../src/models/niveles';
-import { EstadoDimensiones } from '../src/models/tipos';
+import { Dimension } from '../../src/models/classes/dimension';
+import { Nivel } from '../../src/models/niveles';
+import { EstadoDimensiones } from '../../src/models/tipos';
 
 describe('Test para comprobar el comportamiento basico de la clase Dimension', () => {
   test('Permite crear de manera correcta una Dimension', () => {
