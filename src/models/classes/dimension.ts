@@ -1,6 +1,6 @@
-import { IntDimensiones } from './interfaces.js';
-import { Nivel } from './niveles.js';
-import { EstadoDimensiones } from './tipos.js';
+import { IntDimensiones } from '../interfaces.js';
+import { Nivel } from '../niveles.js';
+import { EstadoDimensiones } from '../tipos.js';
 
 export class Dimension implements IntDimensiones {
   public id: string;

@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { Dimension } from '../src/models/dimension';
+import { Dimension } from '../src/models/classes/dimension';
 import { Nivel } from '../src/models/niveles';
 import { EstadoDimensiones } from '../src/models/tipos';
 
