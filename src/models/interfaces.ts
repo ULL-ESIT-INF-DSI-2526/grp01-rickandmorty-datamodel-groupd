@@ -17,6 +17,7 @@ interface IntEntidad {
   id: string;
   nombre: string;
   descripcion: string;
+  info(): string;
 }
 
 /**
