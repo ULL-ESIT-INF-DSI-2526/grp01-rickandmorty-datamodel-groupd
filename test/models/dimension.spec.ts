@@ -4,7 +4,7 @@ import { Nivel } from '../../src/models/niveles';
 import { EstadoDimensiones } from '../../src/models/tipos';
 
 describe('Test para comprobar el comportamiento basico de la clase Dimension', () => {
-  test('Permite crear de manera correcta una Dimension', () => {
+  describe('Permite crear de manera correcta una Dimension', () => {
     const dim1 = new Dimension(
       'C-137',
       'Cronenberg',
@@ -12,6 +12,21 @@ describe('Test para comprobar el comportamiento basico de la clase Dimension', (
       new Nivel(9.4),
       'Especies',
     );
+    test('Id', () => {
+      expect(dim1.id).toEqual('C-137');
+    });
+    test('Nombre', () => {
+      expect(dim1.nombre).toEqual('Cronenberg');
+    });
+    test('Estado', () => {
+      expect(dim1.estado).toEqual('Activa');
+    });
+    test('Nivel', () => {
+      expect(dim1.nivel_tec.nivel).toEqual(9.4);
+    });
+    test('Descripción', () => {
+      expect(dim1.descripcion).toEqual('Especies');
+    });
     expect(dim1.info()).toEqual(
       '[C-137] Cronenberg esta Activa y dispone de un nivel de tecnología de: 9.4.\nMás información: Especies',
     );
