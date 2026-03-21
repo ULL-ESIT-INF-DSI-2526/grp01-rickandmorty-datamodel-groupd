@@ -13,7 +13,7 @@ describe('Test para comprobar el funcionamiento de la clase Localizacion', () =>
     'Especies',
   );
 
-  test('Se puede crear un objeto sin errores', () => {
+  describe('Se puede crear un objeto sin errores', () => {
     const loc1 = new Localizacion(
       '12345',
       'Sector 7-G',
@@ -23,6 +23,24 @@ describe('Test para comprobar el funcionamiento de la clase Localizacion', () =>
       'Contiene gases toxicos',
     );
 
+    test('Id', () => {
+      expect(loc1.id).toEqual('12345');
+    });
+    test('Nombre', () => {
+      expect(loc1.nombre).toEqual('Sector 7-G');
+    });
+    test('Tipo', () => {
+      expect(loc1.tipo).toEqual('Dimensión de bolsillo');
+    });
+    test('Dimensión', () => {
+      expect(loc1.dimension).toEqual(dim1);
+    });
+    test('Población', () => {
+      expect(loc1.poblacion_aprox).toEqual(24000);
+    });
+    test('Descripción', () => {
+      expect(loc1.descripcion).toEqual('Contiene gases toxicos');
+    });
     expect(loc1.info()).toEqual(
       '[12345] Sector 7-G esta en la dimensión Cronenberg.\nEs de tipo Dimensión de bolsillo y tiene una población aproximada de 24000.\nMás información: Contiene gases toxicos',
     );
