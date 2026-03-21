@@ -28,7 +28,7 @@ describe('Test para comprobar el funcionamiento de la clase Personaje', () => {
     80,
   );
 
-  test('Permite crear un personaje sin inconvenintes', () => {
+  describe('Permite crear un personaje sin inconvenintes', () => {
     const personaje1 = new Personaje(
       '1234',
       'Morty',
@@ -39,6 +39,31 @@ describe('Test para comprobar el funcionamiento de la clase Personaje', () => {
       new Nivel(8.9),
       '',
     );
+
+    test('Id', () => {
+      expect(personaje1.id).toEqual('1234');
+    });
+    test('Nombre', () => {
+      expect(personaje1.nombre).toEqual('Morty');
+    });
+    test('Especie', () => {
+      expect(personaje1.especie).toEqual(esp1);
+    });
+    test('Dimensión', () => {
+      expect(personaje1.dim_origen).toEqual(dim1);
+    });
+    test('Estado', () => {
+      expect(personaje1.estado).toEqual('Vivo');
+    });
+    test('Afiliación', () => {
+      expect(personaje1.afiliacion).toEqual('Federación Galáctica');
+    });
+    test('Nivel de Inteligencia', () => {
+      expect(personaje1.nivel_inteligencia.nivel).toEqual(8.9);
+    });
+    test('Descripcion', () => {
+      expect(personaje1.descripcion).toEqual('');
+    });
 
     expect(personaje1.info()).toEqual(
       '[1234] Morty esta Vivo y es de Cronenberg.\nSu especie es Humano y está afiliado a Federación Galáctica.\nDispone de un nivel de inteligencia de 8.9\nMás información: ',
