@@ -24,11 +24,27 @@ export class GestorMultiverso {
   constructor() {}
 
   /**
+   * Intancia estática para implementar el patrón Singleton, asegurando que solo exista una instancia del GestorMultiverso en toda la aplicación.
+   */
+  private static instance: GestorMultiverso;
+
+  /**
    * Propiedad privada para acceder a los datos del almacen de forma centralizada
    * Esto permite mantener la lógica de acceso a datos en un solo lugar y facilita futuras modificaciones al sistema de almacenamiento
    */
   private get data() {
     return almacen.data!;
+  }
+
+  /**
+   * Metodo estático para obtener la instancia única del GestorMultiverso (Singleton)
+   * @returns
+   */
+  public static getInstance(): GestorMultiverso {
+    if (!GestorMultiverso.instance) {
+      GestorMultiverso.instance = new GestorMultiverso();
+    }
+    return GestorMultiverso.instance;
   }
 
   /**
@@ -312,7 +328,6 @@ export class GestorMultiverso {
   public async registrarViaje(
     IdPersonaje: string,
     IdDestino: string,
-    motivo: string,
   ): Promise<void> {
     const personaje = this.data.personajes.find((p) => p.id === IdPersonaje);
     const destino = this.data.dimensiones.find((d) => d.id === IdDestino);

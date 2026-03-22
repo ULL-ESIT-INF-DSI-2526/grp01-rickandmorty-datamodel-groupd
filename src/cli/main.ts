@@ -6,7 +6,6 @@ import { speciesMenu } from './menus/speciesMenu.js';
 import { dimensionMenu } from './menus/dimensionMenu.js';
 
 import { GestorMultiverso } from '../models/classes/gestormultiverso.js';
-import { inizilizarAlmacen } from '../data/alamacen.js';
 
 /**
  * Función principal que muestra el menú principal del gestor del multiverso de Rick and Morty.
@@ -32,8 +31,7 @@ export async function mainMenu() {
         { title: 'Salir', value: 'exit' },
       ],
     });
-    await inizilizarAlmacen();
-    const gestor = new GestorMultiverso();
+    const gestor = GestorMultiverso.getInstance();
     switch (response.option) {
       case 'characters':
         await characterMenu(gestor);
@@ -55,5 +53,3 @@ export async function mainMenu() {
     }
   }
 }
-
-mainMenu();
