@@ -1,8 +1,18 @@
 import prompts from "prompts";
+import { TipoEspecies } from "../../../models/tipos.js";
 
-export async function addSpeciesPrompt() {
+export type AddSpeciesInput = {
+  id: string;
+  nombre: string;
+  descripcion: string;
+  origen: string;
+  tipo: TipoEspecies;
+  esperanza_vida: number;
+};
 
-  const response = await prompts([
+export async function addSpeciesPrompt() : Promise<AddSpeciesInput> {
+
+  const response : AddSpeciesInput = await prompts([
     {
       type: "text",
       name: "id",
@@ -10,27 +20,34 @@ export async function addSpeciesPrompt() {
     },
     {
       type: "text",
-      name: "name",
+      name: "nombre",
       message: "Nombre:"
     },
     {
       type: "text",
-      name: "origin",
+      name: "origen",
       message: "Origen (planeta o dimensión):"
     },
     {
-      type: "text",
-      name: "type",
-      message: "Tipo:"
+      type: "select",
+      name: "tipo",
+      message: "Tipo:",
+      choices: [
+        { title: "Humanoide", value: TipoEspecies.Humanoide },
+        { title: "Amorfo", value: TipoEspecies.Amorfo },
+        { title: "Robótico", value: TipoEspecies.Robotico },
+        { title: "Parásito", value: TipoEspecies.Parasito },
+        { title: "Hivermind", value: TipoEspecies.Hivermind },
+      ]
     },
     {
       type: "number",
-      name: "averageLifeSpan",
+      name: "esperanza_vida",
       message: "Esperanza de vida media:"
     },
     {
       type: "text",
-      name: "description",
+      name: "descripcion",
       message: "Descripción:"
     }
   ]);

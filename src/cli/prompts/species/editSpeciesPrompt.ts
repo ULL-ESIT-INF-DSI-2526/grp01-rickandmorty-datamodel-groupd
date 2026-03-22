@@ -1,8 +1,18 @@
 import prompts from "prompts";
+import { TipoEspecies } from "../../../models/tipos.js";
 
-export async function editSpeciesPrompt() {
+export type EditSpeciesInput = {
+  id: string;
+  nombre?: string;
+  descripcion?: string;
+  origen?: string;
+  tipo?: TipoEspecies;
+  esperanza_vida?: number;
+};
 
-  const response = await prompts([
+export async function editSpeciesPrompt() : Promise<EditSpeciesInput> {
+
+  const response : EditSpeciesInput = await prompts([
     {
       type: "text",
       name: "id",
@@ -10,27 +20,34 @@ export async function editSpeciesPrompt() {
     },
     {
       type: "text",
-      name: "name",
+      name: "nombre",
       message: "Nuevo nombre:"
     },
     {
       type: "text",
-      name: "origin",
+      name: "origen",
       message: "Nuevo origen:"
     },
     {
-      type: "text",
-      name: "type",
-      message: "Nuevo tipo:"
+      type: "select",
+      name: "tipo",
+      message: "Nuevo tipo:",
+      choices: [
+        { title: "Humanoide", value: TipoEspecies.Humanoide },
+        { title: "Amorfo", value: TipoEspecies.Amorfo },
+        { title: "Robótico", value: TipoEspecies.Robotico },
+        { title: "Parásito", value: TipoEspecies.Parasito },
+        { title: "Hivermind", value: TipoEspecies.Hivermind },
+      ]
     },
     {
       type: "number",
-      name: "averageLifeSpan",
+      name: "esperanza_vida",
       message: "Nueva esperanza de vida:"
     },
     {
       type: "text",
-      name: "description",
+      name: "descripcion",
       message: "Nueva descripción:"
     }
   ]);

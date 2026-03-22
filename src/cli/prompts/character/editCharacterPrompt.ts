@@ -1,10 +1,22 @@
 import prompts from "prompts";
+import { AfilaicionPersonajes, EstadoPersonajes } from "../../../models/tipos.js";
 
-export async function editCharacterPrompt() {
+export type EditCharacterInput = {
+  id: string;
+  name?: string;
+  species?: string;
+  dimension?: string;
+  state?: EstadoPersonajes;
+  afiliation?: AfilaicionPersonajes;
+  intelligenceLevel?: number;
+  description?: string;
+};
 
-  const response = await prompts([
+export async function editCharacterPrompt() : Promise<EditCharacterInput> {
+
+  const response : EditCharacterInput = await prompts([
     {
-      type: "number",
+      type: "text",
       name: "id",
       message: "ID del personaje a modificar:"
     },
@@ -28,16 +40,22 @@ export async function editCharacterPrompt() {
       name: "state",
       message: "Nuevo estado:",
       choices: [
-        { title: "Vivo", value: "alive" },
-        { title: "Muerto", value: "dead" },
-        { title: "Desconocido", value: "unknown" },
-        { title: "Robot-sustituto", value: "robot" }
+        { title: "Vivo", value: EstadoPersonajes.Vivo },
+        { title: "Muerto", value: EstadoPersonajes.Muerto },
+        { title: "Desconocido", value: EstadoPersonajes.Desconocido },
+        { title: "Robot-sustituto", value: EstadoPersonajes.RobotSustituto }
       ]
     },
     {
-      type: "text",
+      type: "select",
       name: "afiliation",
-      message: "Nueva afiliación:"
+      message: "Nueva afiliación:",
+      choices: [
+        { title: 'Federación Galáctica', value: AfilaicionPersonajes.FedGalactica },
+        { title: 'Consejo de Ricks', value: AfilaicionPersonajes.ConsejoRicks },
+        { title: 'Familia Smith', value: AfilaicionPersonajes.Smiths },
+        { title: 'Independiente', value: AfilaicionPersonajes.Independiente },
+      ]
     },
     {
       type: "number",

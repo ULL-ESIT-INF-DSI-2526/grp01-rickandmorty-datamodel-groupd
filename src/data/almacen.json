@@ -1,0 +1,2373 @@
+{
+  "dimensiones": [
+    {
+      "nombre": "C-137",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 9
+      },
+      "descripcion": "Dimension original",
+      "id": "D1"
+    },
+    {
+      "nombre": "Cronenberg",
+      "estado": "Cuarentena",
+      "nivel_tec": {
+        "_nivel": 3
+      },
+      "descripcion": "Mundo mutado",
+      "id": "D2"
+    },
+    {
+      "nombre": "J19Z7",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 7
+      },
+      "descripcion": "Hogar de Doofus Rick",
+      "id": "D3"
+    },
+    {
+      "nombre": "C-500A",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 4
+      },
+      "descripcion": "Post-Apocaliptica",
+      "id": "D4"
+    },
+    {
+      "nombre": "Avispa",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 8
+      },
+      "descripcion": "Avispas gigantes",
+      "id": "D5"
+    },
+    {
+      "nombre": "Fascista",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 7
+      },
+      "descripcion": "Regimen totalitario",
+      "id": "D6"
+    },
+    {
+      "nombre": "Camaron",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 8
+      },
+      "descripcion": "Camarones fascistas",
+      "id": "D7"
+    },
+    {
+      "nombre": "Batidora",
+      "estado": "Destruida",
+      "nivel_tec": {
+        "_nivel": 9
+      },
+      "descripcion": "Todo se mezcla",
+      "id": "D8"
+    },
+    {
+      "nombre": "35-C",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 10
+      },
+      "descripcion": "Mega-Arboles",
+      "id": "D9"
+    },
+    {
+      "nombre": "Silla",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 6
+      },
+      "descripcion": "Sillas con telefonos",
+      "id": "D10"
+    },
+    {
+      "nombre": "Pizza",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 6
+      },
+      "descripcion": "Pizzas vivas",
+      "id": "D11"
+    },
+    {
+      "nombre": "Telefono",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 6
+      },
+      "descripcion": "Telefonos vivos",
+      "id": "D12"
+    },
+    {
+      "nombre": "Cromulon",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 10
+      },
+      "descripcion": "Cabezas gigantes",
+      "id": "D13"
+    },
+    {
+      "nombre": "Fart",
+      "estado": "Destruida",
+      "nivel_tec": {
+        "_nivel": 10
+      },
+      "descripcion": "Seres gaseosos",
+      "id": "D14"
+    },
+    {
+      "nombre": "Bolsillo-1",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 9
+      },
+      "descripcion": "Dimension de bolsillo",
+      "id": "D15"
+    }
+  ],
+  "especies": [
+    {
+      "nombre": "Humano",
+      "descripcion": "Bipedos normales",
+      "origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "tipo": "Humanoide",
+      "esperanza_vida": 80,
+      "id": "S1"
+    },
+    {
+      "nombre": "Cronenberg",
+      "descripcion": "Mutantes deformes",
+      "origen": {
+        "nombre": "Cronenberg",
+        "estado": "Cuarentena",
+        "nivel_tec": {
+          "_nivel": 3
+        },
+        "descripcion": "Mundo mutado",
+        "id": "D2"
+      },
+      "tipo": "Amorfo",
+      "esperanza_vida": 150,
+      "id": "S2"
+    },
+    {
+      "nombre": "Meeseeks",
+      "descripcion": "Cumplen un proposito y mueren",
+      "origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "tipo": "Humanoide",
+      "esperanza_vida": 0,
+      "id": "S3"
+    },
+    {
+      "nombre": "Gromflomite",
+      "descripcion": "Insectoides",
+      "origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "tipo": "Humanoide",
+      "esperanza_vida": 120,
+      "id": "S4"
+    },
+    {
+      "nombre": "Zigerion",
+      "descripcion": "Estafadores",
+      "origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "tipo": "Humanoide",
+      "esperanza_vida": 100,
+      "id": "S5"
+    },
+    {
+      "nombre": "Engranaje",
+      "descripcion": "Seres de metal",
+      "origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "tipo": "Robótico",
+      "esperanza_vida": 200,
+      "id": "S6"
+    },
+    {
+      "nombre": "Cromulon",
+      "descripcion": "Flotan en el espacio",
+      "origen": {
+        "nombre": "Cromulon",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 10
+        },
+        "descripcion": "Cabezas gigantes",
+        "id": "D13"
+      },
+      "tipo": "Amorfo",
+      "esperanza_vida": 900000,
+      "id": "S7"
+    },
+    {
+      "nombre": "Parasito",
+      "descripcion": "Se implantan en recuerdos",
+      "origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "tipo": "Parásito",
+      "esperanza_vida": 5,
+      "id": "S8"
+    },
+    {
+      "nombre": "Hivemind",
+      "descripcion": "Mente colmena",
+      "origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "tipo": "Hivermind",
+      "esperanza_vida": 9999,
+      "id": "S9"
+    },
+    {
+      "nombre": "Gazorpiano",
+      "descripcion": "Sexos divididos",
+      "origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "tipo": "Humanoide",
+      "esperanza_vida": 90,
+      "id": "S10"
+    }
+  ],
+  "localizaciones": [
+    {
+      "nombre": "Tierra C-137",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 7000000000,
+      "descripcion": "Hogar estandar",
+      "id": "L1"
+    },
+    {
+      "nombre": "Citadela",
+      "tipo": "Estación Espacial",
+      "dimension": {
+        "nombre": "Bolsillo-1",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension de bolsillo",
+        "id": "D15"
+      },
+      "poblacion_aprox": 5000000,
+      "descripcion": "Sociedad de Ricks",
+      "id": "L2"
+    },
+    {
+      "nombre": "Mundo Cronenberg",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "Cronenberg",
+        "estado": "Cuarentena",
+        "nivel_tec": {
+          "_nivel": 3
+        },
+        "descripcion": "Mundo mutado",
+        "id": "D2"
+      },
+      "poblacion_aprox": 7000000000,
+      "descripcion": "Ruinas carnivoras",
+      "id": "L3"
+    },
+    {
+      "nombre": "Gazorpazorp",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 20000000,
+      "descripcion": "Planeta dividido",
+      "id": "L4"
+    },
+    {
+      "nombre": "Froopyland",
+      "tipo": "Dimensión de bolsillo",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 500,
+      "descripcion": "Mundo de Beth",
+      "id": "L5"
+    },
+    {
+      "nombre": "Planeta Purga",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 10000000,
+      "descripcion": "Festival de masacre",
+      "id": "L6"
+    },
+    {
+      "nombre": "Planeta Squanch",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 3000000,
+      "descripcion": "Mundo natal de Squanchy",
+      "id": "L7"
+    },
+    {
+      "nombre": "Anatomy Park",
+      "tipo": "Dimensión de bolsillo",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 150,
+      "descripcion": "Parque humano",
+      "id": "L8"
+    },
+    {
+      "nombre": "Mundo Engranaje",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 8000000,
+      "descripcion": "Todo es de engranajes",
+      "id": "L9"
+    },
+    {
+      "nombre": "Blips and Chitz",
+      "tipo": "Estación Espacial",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 5000,
+      "descripcion": "Recreativas",
+      "id": "L10"
+    },
+    {
+      "nombre": "Aduana",
+      "tipo": "Estación Espacial",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 10000,
+      "descripcion": "Control federal",
+      "id": "L11"
+    },
+    {
+      "nombre": "Shoneys",
+      "tipo": "Simulación Virtual",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 0,
+      "descripcion": "Mente de Rick",
+      "id": "L12"
+    },
+    {
+      "nombre": "Abuela Grasienta",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 1000,
+      "descripcion": "Olor raro",
+      "id": "L13"
+    },
+    {
+      "nombre": "Pluton",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 4000000000,
+      "descripcion": "Jerry dice que es planeta",
+      "id": "L14"
+    },
+    {
+      "nombre": "Hospital St. Globlyn",
+      "tipo": "Estación Espacial",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 3000,
+      "descripcion": "Hospital top",
+      "id": "L15"
+    },
+    {
+      "nombre": "Microverso",
+      "tipo": "Dimensión de bolsillo",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 5000000000,
+      "descripcion": "Dentro de la bateria",
+      "id": "L16"
+    },
+    {
+      "nombre": "Miniverso",
+      "tipo": "Dimensión de bolsillo",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 5000000000,
+      "descripcion": "Dentro del Microverso",
+      "id": "L17"
+    },
+    {
+      "nombre": "Teenyverso",
+      "tipo": "Dimensión de bolsillo",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 5000000000,
+      "descripcion": "Dentro del Miniverso",
+      "id": "L18"
+    },
+    {
+      "nombre": "Planeta Pajaro",
+      "tipo": "Planeta",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 12000000,
+      "descripcion": "Hogar pajaro",
+      "id": "L19"
+    },
+    {
+      "nombre": "Story Train",
+      "tipo": "Simulación Virtual",
+      "dimension": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "poblacion_aprox": 1000,
+      "descripcion": "Narrativa literal",
+      "id": "L20"
+    }
+  ],
+  "personajes": [
+    {
+      "nombre": "Rick Sanchez",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Familia Smith",
+      "nivel_inteligencia": {
+        "_nivel": 10
+      },
+      "descripcion": "Genio etilico",
+      "id": "P1"
+    },
+    {
+      "nombre": "Morty Smith",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Familia Smith",
+      "nivel_inteligencia": {
+        "_nivel": 4
+      },
+      "descripcion": "Nieto",
+      "id": "P2"
+    },
+    {
+      "nombre": "Summer Smith",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Familia Smith",
+      "nivel_inteligencia": {
+        "_nivel": 6
+      },
+      "descripcion": "Hermana mayor",
+      "id": "P3"
+    },
+    {
+      "nombre": "Beth Smith",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Familia Smith",
+      "nivel_inteligencia": {
+        "_nivel": 8
+      },
+      "descripcion": "Cirujana",
+      "id": "P4"
+    },
+    {
+      "nombre": "Jerry Smith",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Familia Smith",
+      "nivel_inteligencia": {
+        "_nivel": 2
+      },
+      "descripcion": "Desempleado",
+      "id": "P5"
+    },
+    {
+      "nombre": "Evil Morty",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 10
+      },
+      "descripcion": "Presidente",
+      "id": "P6"
+    },
+    {
+      "nombre": "Doofus Rick",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "J19Z7",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 7
+        },
+        "descripcion": "Hogar de Doofus Rick",
+        "id": "D3"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Consejo de Ricks",
+      "nivel_inteligencia": {
+        "_nivel": 5
+      },
+      "descripcion": "Amable",
+      "id": "P7"
+    },
+    {
+      "nombre": "Pickle Rick",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 10
+      },
+      "descripcion": "Es un pepinillo",
+      "id": "P8"
+    },
+    {
+      "nombre": "Rick Avispa",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "Avispa",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 8
+        },
+        "descripcion": "Avispas gigantes",
+        "id": "D5"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Familia Smith",
+      "nivel_inteligencia": {
+        "_nivel": 10
+      },
+      "descripcion": "Pica",
+      "id": "P9"
+    },
+    {
+      "nombre": "Morty Fascista",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "Fascista",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 7
+        },
+        "descripcion": "Regimen totalitario",
+        "id": "D6"
+      },
+      "estado": "Muerto",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 4
+      },
+      "descripcion": "Malvado",
+      "id": "P10"
+    },
+    {
+      "nombre": "Rick Cronenberg",
+      "especie": {
+        "nombre": "Cronenberg",
+        "descripcion": "Mutantes deformes",
+        "origen": {
+          "nombre": "Cronenberg",
+          "estado": "Cuarentena",
+          "nivel_tec": {
+            "_nivel": 3
+          },
+          "descripcion": "Mundo mutado",
+          "id": "D2"
+        },
+        "tipo": "Amorfo",
+        "esperanza_vida": 150,
+        "id": "S2"
+      },
+      "dim_origen": {
+        "nombre": "Cronenberg",
+        "estado": "Cuarentena",
+        "nivel_tec": {
+          "_nivel": 3
+        },
+        "descripcion": "Mundo mutado",
+        "id": "D2"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 10
+      },
+      "descripcion": "Monstruo",
+      "id": "P11"
+    },
+    {
+      "nombre": "Morty Cronenberg",
+      "especie": {
+        "nombre": "Cronenberg",
+        "descripcion": "Mutantes deformes",
+        "origen": {
+          "nombre": "Cronenberg",
+          "estado": "Cuarentena",
+          "nivel_tec": {
+            "_nivel": 3
+          },
+          "descripcion": "Mundo mutado",
+          "id": "D2"
+        },
+        "tipo": "Amorfo",
+        "esperanza_vida": 150,
+        "id": "S2"
+      },
+      "dim_origen": {
+        "nombre": "Cronenberg",
+        "estado": "Cuarentena",
+        "nivel_tec": {
+          "_nivel": 3
+        },
+        "descripcion": "Mundo mutado",
+        "id": "D2"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 4
+      },
+      "descripcion": "Acompaña a Rick",
+      "id": "P12"
+    },
+    {
+      "nombre": "Persona Pajaro",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Robot-sustituto",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 7
+      },
+      "descripcion": "Amigo",
+      "id": "P13"
+    },
+    {
+      "nombre": "Squanchy",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Desconocido",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 5
+      },
+      "descripcion": "Hace squanch",
+      "id": "P14"
+    },
+    {
+      "nombre": "Sr. Meeseeks",
+      "especie": {
+        "nombre": "Meeseeks",
+        "descripcion": "Cumplen un proposito y mueren",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 0,
+        "id": "S3"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Muerto",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 4
+      },
+      "descripcion": "Mirame",
+      "id": "P15"
+    },
+    {
+      "nombre": "Pantalones de Popo",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Familia Smith",
+      "nivel_inteligencia": {
+        "_nivel": 8
+      },
+      "descripcion": "Ooooh wee",
+      "id": "P16"
+    },
+    {
+      "nombre": "Scary Terry",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 3
+      },
+      "descripcion": "Pesadilla",
+      "id": "P17"
+    },
+    {
+      "nombre": "Rey Jellybean",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Muerto",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 4
+      },
+      "descripcion": "Depravado",
+      "id": "P18"
+    },
+    {
+      "nombre": "Fart",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "Fart",
+        "estado": "Destruida",
+        "nivel_tec": {
+          "_nivel": 10
+        },
+        "descripcion": "Seres gaseosos",
+        "id": "D14"
+      },
+      "estado": "Muerto",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 9
+      },
+      "descripcion": "Gas que canta",
+      "id": "P19"
+    },
+    {
+      "nombre": "Abradolf Lincler",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Muerto",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 6
+      },
+      "descripcion": "Hibrido",
+      "id": "P20"
+    },
+    {
+      "nombre": "Cabeza de Engranaje",
+      "especie": {
+        "nombre": "Engranaje",
+        "descripcion": "Seres de metal",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Robótico",
+        "esperanza_vida": 200,
+        "id": "S6"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 6
+      },
+      "descripcion": "Mecanico",
+      "id": "P21"
+    },
+    {
+      "nombre": "Krombopulos Michael",
+      "especie": {
+        "nombre": "Gromflomite",
+        "descripcion": "Insectoides",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 120,
+        "id": "S4"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Muerto",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 7
+      },
+      "descripcion": "Asesino",
+      "id": "P22"
+    },
+    {
+      "nombre": "Zeep Xanflorp",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 9
+      },
+      "descripcion": "Cientifico",
+      "id": "P23"
+    },
+    {
+      "nombre": "Tammy Guetermann",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Muerto",
+      "afiliacion": "Federación Galáctica",
+      "nivel_inteligencia": {
+        "_nivel": 8
+      },
+      "descripcion": "Agente",
+      "id": "P24"
+    },
+    {
+      "nombre": "Unity",
+      "especie": {
+        "nombre": "Hivemind",
+        "descripcion": "Mente colmena",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Hivermind",
+        "esperanza_vida": 9999,
+        "id": "S9"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 9
+      },
+      "descripcion": "Colmena",
+      "id": "P25"
+    },
+    {
+      "nombre": "Presidente Curtis",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 8
+      },
+      "descripcion": "Rival",
+      "id": "P26"
+    },
+    {
+      "nombre": "Jaguar",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 6
+      },
+      "descripcion": "Guerrillero",
+      "id": "P27"
+    },
+    {
+      "nombre": "Snowball",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 8
+      },
+      "descripcion": "Perro",
+      "id": "P28"
+    },
+    {
+      "nombre": "Clone Beth",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Vivo",
+      "afiliacion": "Familia Smith",
+      "nivel_inteligencia": {
+        "_nivel": 8
+      },
+      "descripcion": "Espacial",
+      "id": "P29"
+    },
+    {
+      "nombre": "Rick Prime",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "C-137",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 9
+        },
+        "descripcion": "Dimension original",
+        "id": "D1"
+      },
+      "estado": "Desconocido",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 10
+      },
+      "descripcion": "El original",
+      "id": "P30"
+    },
+    {
+      "nombre": "Bart",
+      "especie": {
+        "nombre": "Humano",
+        "descripcion": "Bipedos normales",
+        "origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80,
+        "id": "S1"
+      },
+      "dim_origen": {
+        "nombre": "Avispa",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 8
+        },
+        "descripcion": "Avispas gigantes",
+        "id": "D5"
+      },
+      "estado": "Robot-sustituto",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 2
+      },
+      "descripcion": "simpson",
+      "id": "P31"
+    }
+  ],
+  "artefactos": [
+    {
+      "nombre": "Portal Gun",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos normales",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension original",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension original",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio etilico",
+        "id": "P1"
+      },
+      "tipo": "Dispositivo de viaje",
+      "nivel_peligrosidad": {
+        "_nivel": 10
+      },
+      "descripcion": "Portales",
+      "id": "A1"
+    },
+    {
+      "nombre": "Bateria Microverso",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Biotecnología",
+      "nivel_peligrosidad": {
+        "_nivel": 8
+      },
+      "descripcion": "Universo",
+      "id": "A2"
+    },
+    {
+      "nombre": "Rayo Congelador",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Arma",
+      "nivel_peligrosidad": {
+        "_nivel": 6
+      },
+      "descripcion": "Congela",
+      "id": "A3"
+    },
+    {
+      "nombre": "Caja Meeseeks",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Objeto cotidiano absurdo",
+      "nivel_peligrosidad": {
+        "_nivel": 7
+      },
+      "descripcion": "Caja azul",
+      "id": "A4"
+    },
+    {
+      "nombre": "Cable Interdimensional",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Objeto cotidiano absurdo",
+      "nivel_peligrosidad": {
+        "_nivel": 1
+      },
+      "descripcion": "TV infinita",
+      "id": "A5"
+    },
+    {
+      "nombre": "Casco Inteligencia",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Biotecnología",
+      "nivel_peligrosidad": {
+        "_nivel": 8
+      },
+      "descripcion": "Aumenta CI",
+      "id": "A6"
+    },
+    {
+      "nombre": "Pocion Amor",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Biotecnología",
+      "nivel_peligrosidad": {
+        "_nivel": 10
+      },
+      "descripcion": "Crea Cronenbergs",
+      "id": "A7"
+    },
+    {
+      "nombre": "Traje Purga",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Arma",
+      "nivel_peligrosidad": {
+        "_nivel": 9
+      },
+      "descripcion": "Destruccion",
+      "id": "A8"
+    },
+    {
+      "nombre": "Bomba Neutrinos",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Arma",
+      "nivel_peligrosidad": {
+        "_nivel": 10
+      },
+      "descripcion": "Bomba",
+      "id": "A9"
+    },
+    {
+      "nombre": "Plumbus",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Objeto cotidiano absurdo",
+      "nivel_peligrosidad": {
+        "_nivel": 1
+      },
+      "descripcion": "Plumbus",
+      "id": "A10"
+    },
+    {
+      "nombre": "Juego Roy",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Dispositivo de viaje",
+      "nivel_peligrosidad": {
+        "_nivel": 3
+      },
+      "descripcion": "Realidad virtual",
+      "id": "A11"
+    },
+    {
+      "nombre": "Somnambulator",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Biotecnología",
+      "nivel_peligrosidad": {
+        "_nivel": 7
+      },
+      "descripcion": "Ejercicio durmiendo",
+      "id": "A12"
+    },
+    {
+      "nombre": "Megasiembra",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Biotecnología",
+      "nivel_peligrosidad": {
+        "_nivel": 4
+      },
+      "descripcion": "Da inteligencia",
+      "id": "A13"
+    },
+    {
+      "nombre": "Inceptor",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Dispositivo de viaje",
+      "nivel_peligrosidad": {
+        "_nivel": 5
+      },
+      "descripcion": "Entra en suenos",
+      "id": "A14"
+    },
+    {
+      "nombre": "Detector",
+      "inventor": {
+        "nombre": "Rick Sanchez",
+        "especie": {
+          "nombre": "Humano",
+          "descripcion": "Bipedos",
+          "origen": {
+            "nombre": "C-137",
+            "estado": "Activa",
+            "nivel_tec": {
+              "_nivel": 9
+            },
+            "descripcion": "Dimension",
+            "id": "D1"
+          },
+          "tipo": "Humanoide",
+          "esperanza_vida": 80,
+          "id": "S1"
+        },
+        "dim_origen": {
+          "nombre": "C-137",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 9
+          },
+          "descripcion": "Dimension",
+          "id": "D1"
+        },
+        "estado": "Vivo",
+        "afiliacion": "Familia Smith",
+        "nivel_inteligencia": {
+          "_nivel": 10
+        },
+        "descripcion": "Genio",
+        "id": "P1"
+      },
+      "tipo": "Objeto cotidiano absurdo",
+      "nivel_peligrosidad": {
+        "_nivel": 2
+      },
+      "descripcion": "Quita maldiciones",
+      "id": "A15"
+    }
+  ],
+  "historialViajes": []
+}

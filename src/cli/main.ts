@@ -1,10 +1,12 @@
 import prompts from 'prompts';
 import { characterMenu } from './menus/characterMenu.js';
-import { searchArtifactMenu } from './menus/searchArtifactMenu.js';
 import { artifactMenu } from './menus/artifactMenu.js';
 import { locationMenu } from './menus/locationMenu.js';
 import { speciesMenu } from './menus/speciesMenu.js';
 import { dimensionMenu } from './menus/dimensionMenu.js';
+
+import { GestorMultiverso } from '../models/classes/gestormultiverso.js';
+import { inizilizarAlmacen } from '../data/alamacen.js';
 
 
 export async function mainMenu() {
@@ -22,8 +24,9 @@ export async function mainMenu() {
                 {title: 'Inventos', value: 'inventions'},
                 {title: 'Salir', value: 'exit'}
             ]
-        });
-        const gestor = null; // PROVISIONAL, REEMPLAZAR CON INSTANCIA REAL DEL GESTOR
+            });
+            await inizilizarAlmacen();
+            const gestor = new GestorMultiverso();
         switch (response.option) {
 
             case 'characters':

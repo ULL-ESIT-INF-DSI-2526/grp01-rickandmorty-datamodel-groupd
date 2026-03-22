@@ -5,8 +5,12 @@ import { editArtifactPrompt } from "../prompts/artifact/editArtifactPrompt.js";
 import { deleteArtifactPrompt } from "../prompts/artifact/deleteArtifactPrompt.js";
 import { printArtifacts } from "../utils/printer.js";
 import { searchArtifactMenu } from "./searchArtifactMenu.js";
+import { GestorMultiverso } from "../../models/classes/gestormultiverso.js";
+import { Artefacto } from "../../models/classes/artefactos.js";
+import { IntArtefactos } from "../../models/interfaces.js";
+import { Nivel } from "../../models/niveles.js";
 
-export async function artifactMenu(gestor: any) {
+export async function artifactMenu(gestor: GestorMultiverso) {
 
   let back = false;
 
@@ -30,21 +34,55 @@ export async function artifactMenu(gestor: any) {
 
       case "add":
         const newArtifact = await addArtifactPrompt();
-        gestor.addArtifact(newArtifact);
+        const inventor = gestor.getAllCharacters().find(p => p.nombre === newArtifact.inventor || p.id === newArtifact.inventor);
+        if (!inventor) {
+          console.log("Inventor no encontrado. Usa nombre o ID de un personaje existente.");
+          break;
+        }
+        await gestor.addArtifact(new Artefacto(
+          newArtifact.id,
+          newArtifact.nombre,
+          inventor,
+          newArtifact.tipo,
+          new Nivel(newArtifact.nivel_peligrosidad),
+          newArtifact.descripcion,
+        ));
         break;
 
       case "edit":
         const updatedArtifact = await editArtifactPrompt();
-        gestor.updateArtifact(updatedArtifact.id, updatedArtifact);
+        const currentArtifact = gestor.getAllArtifacts().find(a => a.id === updatedArtifact.id);
+        if (!currentArtifact) {
+          console.log("Artefacto no encontrado.");
+          break;
+        }
+        const updatedInventor = updatedArtifact.inventor
+          ? gestor.getAllCharacters().find(p => p.nombre === updatedArtifact.inventor || p.id === updatedArtifact.inventor)
+          : currentArtifact.inventor;
+        if (!updatedInventor) {
+          console.log("Inventor no encontrado para la actualización.");
+          break;
+        }
+        const artifactToSave: IntArtefactos = {
+          ...currentArtifact,
+          nombre: updatedArtifact.nombre ?? currentArtifact.nombre,
+          inventor: updatedInventor,
+          tipo: updatedArtifact.tipo ?? currentArtifact.tipo,
+          nivel_peligrosidad: updatedArtifact.nivel_peligrosidad
+            ? new Nivel(updatedArtifact.nivel_peligrosidad)
+            : currentArtifact.nivel_peligrosidad,
+          descripcion: updatedArtifact.descripcion ?? currentArtifact.descripcion,
+        };
+        await gestor.updateArtifact(updatedArtifact.id, artifactToSave);
         break;
 
       case "delete":
         const id = await deleteArtifactPrompt();
-        if (id) gestor.deleteArtifact(id);
+        if (id) await gestor.deleteArtifact(id);
         break;
 
       case "list":
-        const artifacts = gestor.getAllArtifacts();
+        const artifacts: IntArtefactos[] = gestor.getAllArtifacts();
         printArtifacts(artifacts);
         break;
 

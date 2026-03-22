@@ -1,7 +1,16 @@
 import prompts from "prompts";
+import { EstadoDimensiones } from "../../../models/tipos.js";
 
-export async function editDimensionPrompt() {
-  const response = await prompts([
+export type EditDimensionInput = {
+  id: string;
+  nombre?: string;
+  estado?: EstadoDimensiones;
+  nivel_tec?: number;
+  descripcion?: string;
+};
+
+export async function editDimensionPrompt() : Promise<EditDimensionInput> {
+  const response : EditDimensionInput = await prompts([
     {
       type: "text",
       name: "id",
@@ -9,22 +18,22 @@ export async function editDimensionPrompt() {
     },
     {
       type: "text",
-      name: "name",
+      name: "nombre",
       message: "Nuevo nombre:"
     },
     {
       type: "select",
-      name: "state",
+      name: "estado",
       message: "Nuevo estado:",
       choices: [
-        { title: "Activa", value: "active" },
-        { title: "Destruida", value: "destroyed" },
-        { title: "Cuarentena", value: "quarantine" }
+        { title: "Activa", value: EstadoDimensiones.Activa },
+        { title: "Destruida", value: EstadoDimensiones.Destruida },
+        { title: "Cuarentena", value: EstadoDimensiones.Cuarentena }
       ]
     },
     {
       type: "number",
-      name: "technologicalLevel",
+      name: "nivel_tec",
       message: "Nuevo nivel tecnológico (1-10):",
       validate: value => value < 1 || value > 10
         ? "Debe estar entre 1 y 10"
@@ -32,7 +41,7 @@ export async function editDimensionPrompt() {
     },
     {
       type: "text",
-      name: "description",
+      name: "descripcion",
       message: "Nueva descripción:"
     }
   ]);
