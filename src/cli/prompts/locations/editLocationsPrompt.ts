@@ -1,8 +1,18 @@
 import prompts from "prompts";
+import { TipoLocalizaciones } from "../../../models/tipos.js";
 
-export async function editLocationPrompt() {
+export type EditLocationInput = {
+  id: string;
+  nombre?: string;
+  tipo?: TipoLocalizaciones;
+  dimension?: string;
+  poblacion_aprox?: number;
+  descripcion?: string;
+};
 
-  const response = await prompts([
+export async function editLocationPrompt(): Promise<EditLocationInput> {
+
+  const response: EditLocationInput = await prompts([
     {
       type: "text",
       name: "id",
@@ -10,13 +20,19 @@ export async function editLocationPrompt() {
     },
     {
       type: "text",
-      name: "name",
+      name: "nombre",
       message: "Nuevo nombre:"
     },
     {
-      type: "text",
-      name: "type",
-      message: "Nuevo tipo:"
+      type: "select",
+      name: "tipo",
+      message: "Nuevo tipo:",
+      choices: [
+        { title: "Planeta", value: TipoLocalizaciones.Planeta },
+        { title: "Estación Espacial", value: TipoLocalizaciones.EstacionEspacial },
+        { title: "Dimensión de bolsillo", value: TipoLocalizaciones.DimensionBolsillo },
+        { title: "Simulación Virtual", value: TipoLocalizaciones.SimVirtual },
+      ]
     },
     {
       type: "text",
@@ -25,12 +41,12 @@ export async function editLocationPrompt() {
     },
     {
       type: "number",
-      name: "population",
+      name: "poblacion_aprox",
       message: "Nueva población aproximada:"
     },
     {
       type: "text",
-      name: "description",
+      name: "descripcion",
       message: "Nueva descripción:"
     }
   ]);

@@ -1,8 +1,25 @@
 import prompts from 'prompts';
-import {CharacterOutput}  from '../../types/character.js';
+import { AfilaicionPersonajes, EstadoPersonajes } from '../../../models/tipos.js';
 
-export async function addCharacterPrompt() : Promise<CharacterOutput> {
-  const response : CharacterOutput = await prompts([
+export type AddCharacterInput = {
+  id: string;
+  name: string;
+  intelligenceLevel: number;
+  species: string;
+  dimension: string;
+  state: EstadoPersonajes;
+  afiliation: AfilaicionPersonajes;
+  description: string;
+};
+
+export async function addCharacterPrompt() : Promise<AddCharacterInput> {
+  const response : AddCharacterInput = await prompts([
+    {
+      type: 'text',
+      name: 'id',
+      message: 'ID:',
+      validate: (value : string) => value.length <= 0 ? 'No puede estar vacío' : true
+    },
     {
       type: 'text',
       name: 'name',
@@ -28,16 +45,26 @@ export async function addCharacterPrompt() : Promise<CharacterOutput> {
         validate: (value : string) => value.length <= 0 ? 'No puede estar vacío' : true
     },
     {
-        type: 'text',
+        type: 'select',
         name: 'state',
         message: 'Estado:',
-        validate: (value : string) => value.length <= 0 ? 'No puede estar vacío' : true
+        choices: [
+          { title: 'Vivo', value: EstadoPersonajes.Vivo },
+          { title: 'Muerto', value: EstadoPersonajes.Muerto },
+          { title: 'Desconocido', value: EstadoPersonajes.Desconocido },
+          { title: 'Robot-sustituto', value: EstadoPersonajes.RobotSustituto },
+        ]
     },
     {
-        type: 'text',
+        type: 'select',
         name: 'afiliation',
         message: 'Afiliación:',
-        validate: (value : string) => value.length <= 0 ? 'No puede estar vacío' : true
+        choices: [
+          { title: 'Federación Galáctica', value: AfilaicionPersonajes.FedGalactica },
+          { title: 'Consejo de Ricks', value: AfilaicionPersonajes.ConsejoRicks },
+          { title: 'Familia Smith', value: AfilaicionPersonajes.Smiths },
+          { title: 'Independiente', value: AfilaicionPersonajes.Independiente },
+        ]
     },
     {
         type: 'text',

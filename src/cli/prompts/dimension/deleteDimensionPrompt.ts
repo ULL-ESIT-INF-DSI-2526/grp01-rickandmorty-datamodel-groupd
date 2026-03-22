@@ -1,11 +1,21 @@
 import prompts from "prompts";
+import type { IntDimensiones } from "../../../models/interfaces.js";
 
-export async function deleteDimensionPrompt() {
+export async function deleteDimensionPrompt(dimensions: IntDimensiones[]): Promise<string | null> {
+  if (dimensions.length === 0) {
+    console.log("No hay dimensiones disponibles para eliminar.");
+    return null;
+  }
+
   const response = await prompts([
     {
-      type: "text",
+      type: "select",
       name: "id",
-      message: "ID de la dimensión a eliminar:"
+      message: "Selecciona la dimensión a eliminar:",
+      choices: dimensions.map(d => ({
+        title: `${d.id} - ${d.nombre}`,
+        value: d.id
+      }))
     },
     {
       type: "confirm",

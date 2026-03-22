@@ -1,30 +1,43 @@
 import prompts from "prompts";
+import { EstadoDimensiones } from "../../../models/tipos.js";
 
-export async function addDimensionPrompt() {
+export type AddDimensionInput = {
+  id: string;
+  nombre: string;
+  estado: EstadoDimensiones;
+  nivel_tec: number;
+  descripcion: string;
+};
+
+export async function addDimensionPrompt() : Promise<AddDimensionInput> {
   const response = await prompts([
     {
       type: "text",
       name: "id",
-      message: "ID de la dimensión (ej: C-137):"
+      message: "ID de la dimensión (ej: C-137, debe iniciar con mayúscula):",
+      validate: (value: string) => {
+        const regex = /^[A-Z]-?[A-Za-z0-9α-ωΑ-Ω]+$/;
+        return regex.test(value) ? true : "Debe iniciar con mayúscula, seguido de guión opcional y caracteres alfanuméricos";
+      }
     },
     {
       type: "text",
-      name: "name",
+      name: "nombre",
       message: "Nombre:"
     },
     {
       type: "select",
-      name: "state",
+      name: "estado",
       message: "Estado:",
       choices: [
-        { title: "Activa", value: "active" },
-        { title: "Destruida", value: "destroyed" },
-        { title: "Cuarentena", value: "quarantine" }
+        { title: "Activa", value: EstadoDimensiones.Activa },
+        { title: "Destruida", value: EstadoDimensiones.Destruida },
+        { title: "Cuarentena", value: EstadoDimensiones.Cuarentena }
       ]
     },
     {
       type: "number",
-      name: "technologicalLevel",
+      name: "nivel_tec",
       message: "Nivel tecnológico (1-10):",
       validate: value => value < 1 || value > 10
         ? "Debe estar entre 1 y 10"
@@ -32,7 +45,7 @@ export async function addDimensionPrompt() {
     },
     {
       type: "text",
-      name: "description",
+      name: "descripcion",
       message: "Descripción:"
     }
   ]);

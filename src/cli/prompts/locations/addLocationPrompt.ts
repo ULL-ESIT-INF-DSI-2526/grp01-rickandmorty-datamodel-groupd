@@ -1,8 +1,18 @@
 import prompts from "prompts";
+import { TipoLocalizaciones } from "../../../models/tipos.js";
 
-export async function addLocationPrompt() {
+export type AddLocationInput = {
+  id: string;
+  nombre: string;
+  tipo: TipoLocalizaciones;
+  dimension: string;
+  poblacion_aprox: number;
+  descripcion: string;
+};
 
-  const response = await prompts([
+export async function addLocationPrompt(): Promise<AddLocationInput> {
+
+  const response: AddLocationInput = await prompts([
     {
       type: "text",
       name: "id",
@@ -10,13 +20,19 @@ export async function addLocationPrompt() {
     },
     {
       type: "text",
-      name: "name",
+      name: "nombre",
       message: "Nombre:"
     },
     {
-      type: "text",
-      name: "type",
-      message: "Tipo (planeta, estación, simulación...)"
+      type: "select",
+      name: "tipo",
+      message: "Tipo:",
+      choices: [
+        { title: "Planeta", value: TipoLocalizaciones.Planeta },
+        { title: "Estación Espacial", value: TipoLocalizaciones.EstacionEspacial },
+        { title: "Dimensión de bolsillo", value: TipoLocalizaciones.DimensionBolsillo },
+        { title: "Simulación Virtual", value: TipoLocalizaciones.SimVirtual },
+      ]
     },
     {
       type: "text",
@@ -25,12 +41,12 @@ export async function addLocationPrompt() {
     },
     {
       type: "number",
-      name: "population",
+      name: "poblacion_aprox",
       message: "Población aproximada:"
     },
     {
       type: "text",
-      name: "description",
+      name: "descripcion",
       message: "Descripción:"
     }
   ]);

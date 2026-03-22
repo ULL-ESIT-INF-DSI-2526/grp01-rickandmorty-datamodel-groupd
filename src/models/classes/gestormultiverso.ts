@@ -7,6 +7,17 @@ import { IntDimensiones, IntPersonajes, IntEspecies, IntLocalizacion, IntArtefac
 import { EstadoPersonajes, TipoArtefacto } from '../tipos.js';
 import { Localizacion } from './localizaciones.js';
 
+function nivelValue(value: unknown): number {
+  if (typeof value === 'number') return value;
+  if (value && typeof value === 'object') {
+    const maybeNivel = (value as { nivel?: unknown }).nivel;
+    if (typeof maybeNivel === 'number') return maybeNivel;
+    const maybePrivateNivel = (value as { _nivel?: unknown })._nivel;
+    if (typeof maybePrivateNivel === 'number') return maybePrivateNivel;
+  }
+  return 0;
+}
+
 /**
  * Clase GestorMultiverso
  */
@@ -280,13 +291,29 @@ export class GestorMultiverso {
   }
 
   public buscarArtefactos(
-    filtros: Partial<{ nombre: string, inventor: string, tipo: TipoArtefacto, peligrosidadMinima: number}>, ): IntArtefactos[] {
+    filtros: Partial<{ nombre: string, inventor: string, tipo: TipoArtefacto, peligrosidadMinima: number, peligrosidad: number }>, ): IntArtefactos[] {
 
     let resultados = [...this.data.artefactos];
     if(filtros.nombre) resultados = resultados.filter(p => p.nombre.toLowerCase().includes(filtros.nombre!.toLowerCase()));
     if(filtros.inventor) resultados = resultados.filter(a => a.inventor.nombre.toLowerCase().includes(filtros.inventor!.toLowerCase()));
     if(filtros.tipo) resultados = resultados.filter(a => a.tipo === filtros.tipo);
-    if(filtros.peligrosidadMinima) resultados = resultados.filter(a => a.nivel_peligrosidad.nivel >= filtros.peligrosidadMinima!);
+    if(filtros.peligrosidadMinima) resultados = resultados.filter(a => nivelValue(a.nivel_peligrosidad) >= filtros.peligrosidadMinima!);
+    if(filtros.peligrosidad !== undefined) resultados = resultados.filter(a => nivelValue(a.nivel_peligrosidad) === filtros.peligrosidad);
     return resultados;
+  }
+
+  public localizarVersionesAlternativas(nombre: string): IntPersonajes[] {
+    const target = nombre.trim().toLowerCase();
+    if (!target) return [];
+
+    const coincidencias = this.data.personajes.filter(
+      p => p.nombre.trim().toLowerCase() === target,
+    );
+
+    if (coincidencias.length <= 1) {
+      return [];
+    }
+
+    return coincidencias;
   }
 }
