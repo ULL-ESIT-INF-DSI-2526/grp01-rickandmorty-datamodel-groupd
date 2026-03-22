@@ -1,0 +1,77 @@
+{
+  "dimensiones": [
+    {
+      "id": "NULL",
+      "nombre": "Destruida",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 10
+      },
+      "descripcion": "Origen de Rick"
+    },
+    {
+      "id": "C-131",
+      "nombre": "Tierra C-131",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 10
+      },
+      "descripcion": "Origen de Rick"
+    }
+  ],
+  "personajes": [
+    {
+      "id": "P-01",
+      "nombre": "Rick Sanchez",
+      "especie": {
+        "id": "ESP-01",
+        "nombre": "Humano",
+        "descripcion": "Sapiens",
+        "origen": {
+          "id": "NULL",
+          "nombre": "Destruida",
+          "estado": "Activa",
+          "nivel_tec": {
+            "_nivel": 10
+          },
+          "descripcion": "Origen de Rick"
+        },
+        "tipo": "Humanoide",
+        "esperanza_vida": 80
+      },
+      "dim_origen": {
+        "id": "NULL",
+        "nombre": "Destruida",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 10
+        },
+        "descripcion": "Origen de Rick"
+      },
+      "estado": "Desconocido",
+      "afiliacion": "Independiente",
+      "nivel_inteligencia": {
+        "_nivel": 10
+      },
+      "descripcion": "Científico [AVISO: Dimension de origen destruida] ",
+      "localizacion": {
+        "id": "C-131",
+        "nombre": "Tierra C-131",
+        "estado": "Activa",
+        "nivel_tec": {
+          "_nivel": 10
+        },
+        "descripcion": "Origen de Rick"
+      }
+    }
+  ],
+  "especies": [],
+  "localizaciones": [],
+  "artefactos": [],
+  "regEventos": [
+    {
+      "fecha": "2026-03-22T20:53:54.974Z",
+      "descripcion": "Viaje registrado: Rick Sanchez ha saltado de Destruida a Tierra C-131"
+    }
+  ]
+}
