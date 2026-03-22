@@ -10,7 +10,11 @@ import {
   IntLocalizacion,
   IntArtefactos,
 } from '../interfaces.js';
-import { EstadoPersonajes, TipoArtefacto } from '../tipos.js';
+import {
+  EstadoPersonajes,
+  TipoArtefacto,
+  EstadoDimensiones,
+} from '../tipos.js';
 import { Localizacion } from './localizaciones.js';
 import { nivelValue } from '../../cli/utils/printer.js';
 
@@ -503,5 +507,135 @@ export class GestorMultiverso {
     }
 
     return coincidencias;
+  }
+
+  /**
+   * Metodo para generar un informe de las dimensiones activas en el multiverso,
+   * mostrando su nivel tecnológico y calculando la media de dicho nivel entre las dimensiones activas
+   * @returns Imrpime en consola el informe generado
+   */
+  public reporteDimensionesActivas(): void {
+    const activas = this.data.dimensiones.filter(
+      (d) => d.estado === EstadoDimensiones.Activa,
+    );
+
+    console.log('\n--- DIMENSIONES ACTIVAS ---');
+    if (activas.length === 0) {
+      console.log('No hay dimensiones activas en este momento.');
+      return;
+    }
+
+    let sumaTecnologica = 0;
+    activas.forEach((d) => {
+      const nivel = nivelValue(d.nivel_tec);
+      sumaTecnologica += nivel;
+      console.log(`- ${d.nombre} (ID: ${d.id}) | Nivel Tecnológico: ${nivel}`);
+    });
+
+    const media = sumaTecnologica / activas.length;
+    console.log(`-------------------------------------------------`);
+    console.log(
+      `=> Nivel Tecnológico Medio de las Dimensiones Activas: ${media.toFixed(2)}\n`,
+    );
+  }
+
+  /**
+   * Metodo para generar un informe de los personajes con más versiones alternativas registradas en el sistema,
+   * mostrando el número de versiones que tiene cada uno y ordenándolos de mayor a menor
+   * @returns Imprime en consola el informe generado
+   */
+  public reportePersonajesMasVersiones(): void {
+    const conteo = new Map<string, IntPersonajes[]>();
+
+    // Agrupamos por nombre (ignorando mayúsculas y espacios para evitar duplicados falsos)
+    this.data.personajes.forEach((p) => {
+      const nombreNormalizado = p.nombre.trim().toLowerCase();
+      if (!conteo.has(nombreNormalizado)) {
+        conteo.set(nombreNormalizado, []);
+      }
+      conteo.get(nombreNormalizado)!.push(p);
+    });
+
+    const ordenados = Array.from(conteo.values())
+      .filter((grupo) => grupo.length > 1)
+      .sort((a, b) => b.length - a.length);
+
+    console.log('\n--- PERSONAJES CON MÁS VERSIONES ALTERNATIVAS ---');
+    if (ordenados.length === 0) {
+      console.log('No hay personajes con versiones alternativas registradas.');
+      return;
+    }
+
+    ordenados.slice(0, 5).forEach((grupo) => {
+      console.log(
+        `- ${grupo[0].nombre}: ${grupo.length} versiones registradas.`,
+      );
+    });
+    console.log('');
+  }
+
+  /**
+   * Metodo para generar un informe de los inventos más peligrosos registrados en el sistema,
+   * mostrando su nivel de peligrosidad, su inventor y la ubicación actual del inventor
+   * (su dimensión base o su localización actual si ha viajado), ordenándolos de mayor a menor peligrosidad
+   * @returns Imprime en consola el informe generado
+   */
+  public reporteInventosPeligrosos(): void {
+    const ordenados = [...this.data.artefactos].sort(
+      (a, b) =>
+        nivelValue(b.nivel_peligrosidad) - nivelValue(a.nivel_peligrosidad),
+    );
+
+    console.log('\n--- INVENTOS MÁS PELIGROSOS DESPLEGADOS ---');
+    if (ordenados.length === 0) {
+      console.log('No hay inventos registrados.');
+      return;
+    }
+
+    ordenados.slice(0, 5).forEach((a) => {
+      const inventor = this.data.personajes.find((p) => p.id === a.inventor.id);
+
+      const ubicacion = inventor
+        ? (inventor as unknown as { _localizacion?: { nombre: string } })
+            ._localizacion?.nombre || inventor.dim_origen.nombre
+        : 'Desconocida';
+
+      console.log(
+        `- [Peligrosidad: ${nivelValue(a.nivel_peligrosidad)}] ${a.nombre}`,
+      );
+      console.log(
+        `    Inventor: ${a.inventor.nombre} | Ubicación actual: ${ubicacion}`,
+      );
+    });
+    console.log('');
+  }
+
+  /**
+   * Metodo para generar un informe del historial de viajes registrados para un personaje dado su nombre,
+   * mostrando la fecha y la descripción de cada viaje registrado en el sistema
+   * (ej: "Viaje registrado: Rick ha saltado de la Tierra-616 a la Tierra-199999"), ordenados cronológicamente
+   * @param nombrePersonaje - El nombre del personaje para el cual se desea generar el informe de viajes
+   * @returns Imprime en consola el informe generado o un mensaje indicando que no se han registrado viajes para ese personaje
+   */
+  public reporteHistorialViajes(nombrePersonaje: string): void {
+    const target = nombrePersonaje.trim().toLowerCase();
+
+    // Filtramos los eventos de viaje en los que aparece el nombre del personaje
+    const viajes = this.data.regEventos.filter((e) =>
+      e.descripcion.toLowerCase().includes(target),
+    );
+
+    console.log(
+      `\n--- HISTORIAL DE VIAJES: ${nombrePersonaje.toUpperCase()} ---`,
+    );
+    if (viajes.length === 0) {
+      console.log('No se han registrado viajes para este personaje.');
+      return;
+    }
+
+    viajes.forEach((v) => {
+      console.log(`- [${new Date(v.fecha).toLocaleString()}] ${v.descripcion}`);
+    });
+    console.log('');
   }
 }

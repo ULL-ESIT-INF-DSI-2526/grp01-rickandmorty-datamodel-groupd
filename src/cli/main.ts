@@ -4,6 +4,7 @@ import { artifactMenu } from './menus/artifactMenu.js';
 import { locationMenu } from './menus/locationMenu.js';
 import { speciesMenu } from './menus/speciesMenu.js';
 import { dimensionMenu } from './menus/dimensionMenu.js';
+import { reportMenu } from './menus/reportMenu.js';
 
 import { GestorMultiverso } from '../models/classes/gestormultiverso.js';
 
@@ -28,6 +29,7 @@ export async function mainMenu() {
         { title: 'Especies', value: 'species' },
         { title: 'Localizaciones', value: 'locations' },
         { title: 'Inventos', value: 'inventions' },
+        { title: 'Informes', value: 'reports' },
         { title: 'Salir', value: 'exit' },
       ],
     });
@@ -47,6 +49,9 @@ export async function mainMenu() {
         break;
       case 'inventions':
         await artifactMenu(gestor);
+        break;
+      case 'reports':
+        await reportMenu(gestor);
         break;
       case 'exit':
         exit = true;
