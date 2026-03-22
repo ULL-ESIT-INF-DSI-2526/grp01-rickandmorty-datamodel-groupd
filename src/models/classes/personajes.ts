@@ -45,7 +45,7 @@ export class Personaje implements IntPersonajes {
   }
 
   public get localizacion(): Dimension {
-    return this.localizacion;
+    return this._localizacion;
   }
 
   public set localizacion(nuevaDim: Dimension) {
