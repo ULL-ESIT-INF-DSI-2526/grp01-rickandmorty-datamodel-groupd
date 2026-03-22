@@ -1,0 +1,18 @@
+{
+  "dimensiones": [
+    {
+      "id": "A-1",
+      "nombre": "Test",
+      "estado": "Activa",
+      "nivel_tec": {
+        "_nivel": 1
+      },
+      "descripcion": "..."
+    }
+  ],
+  "personajes": [],
+  "especies": [],
+  "localizaciones": [],
+  "artefactos": [],
+  "historialViajes": []
+}

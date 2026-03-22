@@ -1,12 +1,14 @@
 import { IntDimensiones, IntEspecies, IntPersonajes } from '../interfaces.js';
 import { Nivel } from '../niveles.js';
 import { AfilaicionPersonajes, EstadoPersonajes } from '../tipos.js';
+import { Dimension } from './dimension.js';
 
 /**
  * Clase concreta para representar los personajes
  */
 export class Personaje implements IntPersonajes {
   public id: string;
+  private _localizacion: Dimension;
 
   /**
    * Set que almacena todos los ids para comprobar que sean únicos.
@@ -40,6 +42,14 @@ export class Personaje implements IntPersonajes {
     this.ValidId(new_id);
     this.id = new_id;
     Personaje.ids_registrados.add(new_id);
+  }
+
+  public get localizacion(): Dimension {
+    return this.localizacion;
+  }
+
+  public set localizacion(nuevaDim: Dimension) {
+    this._localizacion = nuevaDim;
   }
 
   /**

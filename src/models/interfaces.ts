@@ -20,6 +20,7 @@ interface IntEntidad {
   info(): string;
 }
 
+
 /**
  * Interfaz para representar una dimensión valida.
  * Extiende `IntEntidad` y además añade:
@@ -74,4 +75,9 @@ export interface IntArtefactos extends IntEntidad {
   inventor: IntPersonajes;
   tipo: TipoArtefacto;
   nivel_peligrosidad: Nivel;
+}
+
+export interface Evento {
+  fecha: Date;
+  descripcion: string;
 }

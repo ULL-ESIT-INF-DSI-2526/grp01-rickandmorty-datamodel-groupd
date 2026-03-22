@@ -3,6 +3,7 @@ import { Dimension } from '../models/classes/dimension.js';
 import { Especies } from '../models/classes/especie.js';
 import { Localizacion } from '../models/classes/localizaciones.js';
 import { Personaje } from '../models/classes/personajes.js';
+import { Evento } from '../models/interfaces.js'
 
 export interface IntAlmacen {
   dimensiones: Dimension[];
@@ -10,4 +11,5 @@ export interface IntAlmacen {
   especies: Especies[];
   localizaciones: Localizacion[];
   artefactos: Artefacto[];
+  regEventos: Evento[];
 }
