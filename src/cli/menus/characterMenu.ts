@@ -1,9 +1,10 @@
 import prompts from "prompts";
 import { addCharacterPrompt } from "../prompts/character/addCharacterPrompt.js";
-import type { CharacterOutput } from "../types/character.js";
 import { searchCharacterPrompt } from "../prompts/character/searchCharacterPrompt.js";
 import { printCharacter } from "../utils/printer.js";
-//import gestor from "../../gestor.js" // rol 2
+import { deleteCharacterPrompt } from "../prompts/character/deleteCharacterPrompt.js";
+import { editCharacterPrompt } from "../prompts/character/editCharacterPrompt.js";
+import type { CharacterOutput } from "../types/character.js";
 
 export async function characterMenu(gestor: any) {
     let back = false;
@@ -15,6 +16,7 @@ export async function characterMenu(gestor: any) {
             choices: [
                 {title: 'Añadir personaje', value: 'add'},
                 {title: 'Eliminar personaje', value: 'delete'},
+                {title: 'Modificar personaje', value: 'modify'},
                 {title: 'Buscar personajes', value: 'search'},
                 {title: 'Listar todos', value: 'list'},
                 {title: 'Volver', value: 'back'}
@@ -34,17 +36,17 @@ export async function characterMenu(gestor: any) {
                 const results : CharacterOutput[] = gestor.searchCharacterByName(characterName[0].name);
                 printCharacter(results);
                 break;
+            case 'modify':
+                const character = await editCharacterPrompt();
+                gestor.updateCharacter(character.id, character);
+                break;
             case 'list':
                 const characters : CharacterOutput[] = gestor.getAllCharacters();
                 printCharacter(characters);
                 break;
             case 'delete':
-                const character : CharacterOutput[] = await searchCharacterPrompt();
-                if (character.length === 0) {
-                    console.log('No se han encontrado personajes con ese filter.');
-                    break;
-                }
-                gestor.deleteCharacter(character[0].id);
+                const characterId : string = await deleteCharacterPrompt();
+                gestor.deleteCharacter(characterId);
                 break;
             case 'back':
                 back = true;
