@@ -84,4 +84,28 @@ describe('Test para comprobar el funcionamiento de la clase Personaje', () => {
       );
     }).toThrow('Este id (1234) ya ha sido registrado');
   });
+
+  test('Los setters y getters funcionan correctamente', () => {
+    const personaje2 = new Personaje(
+      '5678',
+      'Summer',
+      esp1,
+      dim1,
+      EstadoPersonajes.Vivo,
+      AfilaicionPersonajes.FedGalactica,
+      new Nivel(6.5),
+      '',
+    );
+
+    const dim2 = new Dimension(
+      'D-01',
+      'Dimension Desconocida',
+      EstadoDimensiones.Activa,
+      new Nivel(1),
+      'Especies',
+    );
+
+    personaje2.localizacion = dim2;
+    expect(personaje2.localizacion).toEqual(dim2);
+  });
 });
