@@ -10,6 +10,9 @@ export type AddLocationInput = {
   descripcion: string;
 };
 
+/**
+ * Pide los datos para crear una localizacion nueva
+ */
 export async function addLocationPrompt(): Promise<AddLocationInput> {
 
   const response: AddLocationInput = await prompts([

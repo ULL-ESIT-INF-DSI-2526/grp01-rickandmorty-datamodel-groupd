@@ -10,6 +10,9 @@ export type EditLocationInput = {
   descripcion?: string;
 };
 
+/**
+ * Pide cambios para actualizar una localizacion
+ */
 export async function editLocationPrompt(): Promise<EditLocationInput> {
 
   const response: EditLocationInput = await prompts([

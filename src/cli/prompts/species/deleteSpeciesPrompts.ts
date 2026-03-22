@@ -1,5 +1,8 @@
 import prompts from "prompts";
 
+/**
+ * Pide confirmacion para borrar una especie por id
+ */
 export async function deleteSpeciesPrompt() {
 
   const response = await prompts([

@@ -7,6 +7,10 @@ import { GestorMultiverso } from "../../models/classes/gestormultiverso.js";
 import { IntEspecies } from "../../models/interfaces.js";
 import { Especies } from "../../models/classes/especie.js";
 
+/**
+ * Muestra el menu de especies y permite gestionarlas
+ * @param gestor Gestor principal del multiverso
+ */
 export async function speciesMenu(gestor: GestorMultiverso) {
 
   let back = false;

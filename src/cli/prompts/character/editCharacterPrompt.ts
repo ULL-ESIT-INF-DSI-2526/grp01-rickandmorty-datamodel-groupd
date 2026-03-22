@@ -12,6 +12,9 @@ export type EditCharacterInput = {
   description?: string;
 };
 
+/**
+ * Pide cambios para actualizar un personaje
+ */
 export async function editCharacterPrompt() : Promise<EditCharacterInput> {
 
   const response : EditCharacterInput = await prompts([

@@ -1,8 +1,7 @@
 import prompts from "prompts";
 
 /**
- * Función que muestra un prompt para eliminar un personaje, solicitando el ID del personaje a eliminar.
- * @returns El iD del personaje a eliminar.
+ * Pide el id de un personaje para poder borrarlo
  */
 export async function deleteCharacterPrompt() {
     const response = await prompts({

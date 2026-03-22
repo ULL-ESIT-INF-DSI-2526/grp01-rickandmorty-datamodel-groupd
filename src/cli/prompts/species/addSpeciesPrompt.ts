@@ -10,6 +10,9 @@ export type AddSpeciesInput = {
   esperanza_vida: number;
 };
 
+/**
+ * Pide los datos para crear una especie nueva
+ */
 export async function addSpeciesPrompt() : Promise<AddSpeciesInput> {
 
   const response : AddSpeciesInput = await prompts([

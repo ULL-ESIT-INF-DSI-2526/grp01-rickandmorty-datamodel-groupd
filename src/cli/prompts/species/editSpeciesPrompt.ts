@@ -10,6 +10,9 @@ export type EditSpeciesInput = {
   esperanza_vida?: number;
 };
 
+/**
+ * Pide cambios para actualizar una especie
+ */
 export async function editSpeciesPrompt() : Promise<EditSpeciesInput> {
 
   const response : EditSpeciesInput = await prompts([

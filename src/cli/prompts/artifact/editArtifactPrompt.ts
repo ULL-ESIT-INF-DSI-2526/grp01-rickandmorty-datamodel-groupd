@@ -10,6 +10,9 @@ export type EditArtifactInput = {
   descripcion?: string;
 };
 
+/**
+ * Pide cambios para actualizar un invento
+ */
 export async function editArtifactPrompt(): Promise<EditArtifactInput> {
   const response: EditArtifactInput = await prompts([
     { type: "text", name: "id", message: "ID del invento a modificar:" },

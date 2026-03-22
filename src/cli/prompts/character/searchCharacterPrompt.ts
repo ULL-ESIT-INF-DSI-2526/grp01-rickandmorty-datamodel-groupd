@@ -13,9 +13,9 @@ export type CharacterSearchInput = {
   filters: CharacterSearchFilters;
   sort: CharacterSort;
 };
+
 /**
- * 
- * @returns retorna el nombre
+ * Pide un filtro de personajes y tambien el orden
  */
 export async function searchCharacterPrompt() : Promise<CharacterSearchInput> {
     const response : prompts.Answers<string> = await prompts({
@@ -74,6 +74,9 @@ export async function searchCharacterPrompt() : Promise<CharacterSearchInput> {
     return { filters: {}, sort: { field: "none", direction: "asc" } };
 }
 
+  /**
+   * Pide como ordenar los resultados de personajes
+   */
 async function askCharacterSort(): Promise<CharacterSort> {
   const fieldResponse = await prompts({
     type: "select",

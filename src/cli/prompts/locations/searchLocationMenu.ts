@@ -4,6 +4,10 @@ import { GestorMultiverso } from "../../../models/classes/gestormultiverso.js";
 import { IntLocalizacion } from "../../../models/interfaces.js";
 import { TipoLocalizaciones } from "../../../models/tipos.js";
 
+/**
+ * Pide filtros y muestra localizaciones segun la busqueda
+ * @param gestor Gestor principal del multiverso
+ */
 export async function searchLocationMenu(gestor: GestorMultiverso) {
 
   const response = await prompts({

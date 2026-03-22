@@ -9,6 +9,9 @@ export type AddDimensionInput = {
   descripcion: string;
 };
 
+/**
+ * Pide los datos para crear una dimension nueva
+ */
 export async function addDimensionPrompt() : Promise<AddDimensionInput> {
   const response = await prompts([
     {

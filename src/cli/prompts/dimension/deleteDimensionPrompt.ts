@@ -1,6 +1,9 @@
 import prompts from "prompts";
 import type { IntDimensiones } from "../../../models/interfaces.js";
 
+/**
+ * Muestra dimensiones y pide confirmacion para borrar una
+ */
 export async function deleteDimensionPrompt(dimensions: IntDimensiones[]): Promise<string | null> {
   if (dimensions.length === 0) {
     console.log("No hay dimensiones disponibles para eliminar.");

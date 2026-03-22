@@ -1,5 +1,8 @@
 import prompts from "prompts";
 
+/**
+ * Pide confirmacion para borrar una localizacion por id
+ */
 export async function deleteLocationPrompt() {
   const response = await prompts([
     {

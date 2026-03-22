@@ -10,6 +10,9 @@ export type AddArtifactInput = {
   descripcion: string;
 };
 
+/**
+ * Pide los datos para crear un invento nuevo
+ */
 export async function addArtifactPrompt(): Promise<AddArtifactInput> {
   const response: AddArtifactInput = await prompts([
     { type: "text", name: "id", message: "ID del invento:" },

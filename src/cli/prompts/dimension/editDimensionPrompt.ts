@@ -9,6 +9,9 @@ export type EditDimensionInput = {
   descripcion?: string;
 };
 
+/**
+ * Pide cambios para actualizar una dimension
+ */
 export async function editDimensionPrompt() : Promise<EditDimensionInput> {
   const response : EditDimensionInput = await prompts([
     {

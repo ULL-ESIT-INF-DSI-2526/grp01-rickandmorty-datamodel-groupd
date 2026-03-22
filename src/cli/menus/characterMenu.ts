@@ -9,6 +9,10 @@ import { IntPersonajes } from "../../models/interfaces.js";
 import { Nivel } from "../../models/niveles.js";
 import { Personaje } from "../../models/classes/personajes.js";
 
+/**
+ * Devuelve un nivel numerico aunque el dato venga del JSON
+ * @param value Nivel en memoria o nivel guardado
+ */
 function nivelValue(value: unknown): number {
     if (typeof value === 'number') return value;
     if (value && typeof value === 'object') {
@@ -20,6 +24,10 @@ function nivelValue(value: unknown): number {
     return 0;
 }
 
+/**
+ * Muestra el menu de personajes y ejecuta cada accion
+ * @param gestor Gestor principal del multiverso
+ */
 export async function characterMenu(gestor: GestorMultiverso) {
     let back = false;
     while (!back) {
@@ -127,6 +135,12 @@ export async function characterMenu(gestor: GestorMultiverso) {
     }
 }
 
+/**
+ * Ordena personajes por nombre o por inteligencia
+ * @param characters Lista de personajes filtrados
+ * @param field Campo por el que se ordena
+ * @param direction Sentido ascendente o descendente
+ */
 function sortCharacters(
     characters: IntPersonajes[],
     field: 'none' | 'nombre' | 'inteligencia',

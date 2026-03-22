@@ -8,6 +8,10 @@ import { GestorMultiverso } from "../../models/classes/gestormultiverso.js";
 import { IntLocalizacion } from "../../models/interfaces.js";
 import { Localizacion } from "../../models/classes/localizaciones.js";
 
+/**
+ * Muestra el menu de localizaciones y permite gestionarlas
+ * @param gestor Gestor principal del multiverso
+ */
 export async function locationMenu(gestor: GestorMultiverso) {
 
   let back = false;

@@ -1,4 +1,3 @@
-// artifactMenu.ts
 import prompts from "prompts";
 import { addArtifactPrompt } from "../prompts/artifact/addArtifactPrompt.js";
 import { editArtifactPrompt } from "../prompts/artifact/editArtifactPrompt.js";
@@ -10,6 +9,10 @@ import { Artefacto } from "../../models/classes/artefactos.js";
 import { IntArtefactos } from "../../models/interfaces.js";
 import { Nivel } from "../../models/niveles.js";
 
+/**
+ * Muestra el menu de inventos y permite gestionarlos
+ * @param gestor Gestor principal del multiverso
+ */
 export async function artifactMenu(gestor: GestorMultiverso) {
 
   let back = false;

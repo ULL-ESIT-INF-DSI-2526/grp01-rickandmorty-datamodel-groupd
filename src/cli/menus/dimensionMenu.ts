@@ -8,6 +8,10 @@ import { IntDimensiones } from "../../models/interfaces.js";
 import { Dimension } from "../../models/classes/dimension.js";
 import { Nivel } from "../../models/niveles.js";
 
+/**
+ * Muestra el menu de dimensiones y permite gestionarlas
+ * @param gestor Gestor principal del multiverso
+ */
 export async function dimensionMenu(gestor: GestorMultiverso) {
   let back = false;
 

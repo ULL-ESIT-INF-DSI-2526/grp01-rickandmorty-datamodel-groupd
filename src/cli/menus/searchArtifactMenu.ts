@@ -4,6 +4,10 @@ import { GestorMultiverso } from "../../models/classes/gestormultiverso.js";
 import { IntArtefactos } from "../../models/interfaces.js";
 import { TipoArtefacto } from "../../models/tipos.js";
 
+/**
+ * Pide filtros y muestra inventos segun la busqueda
+ * @param gestor Gestor principal del multiverso
+ */
 export async function searchArtifactMenu(gestor: GestorMultiverso) {
 
   const response = await prompts({

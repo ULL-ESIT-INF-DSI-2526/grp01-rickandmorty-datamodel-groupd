@@ -12,6 +12,9 @@ export type AddCharacterInput = {
   description: string;
 };
 
+/**
+ * Pide los datos para crear un personaje nuevo
+ */
 export async function addCharacterPrompt() : Promise<AddCharacterInput> {
   const response : AddCharacterInput = await prompts([
     {
