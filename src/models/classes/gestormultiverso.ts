@@ -23,6 +23,10 @@ export class GestorMultiverso {
    */
   constructor() {}
 
+  /**
+   * Propiedad privada para acceder a los datos del almacen de forma centralizada
+   * Esto permite mantener la lógica de acceso a datos en un solo lugar y facilita futuras modificaciones al sistema de almacenamiento
+   */
   private get data() {
     return almacen.data!;
   }
@@ -81,6 +85,8 @@ export class GestorMultiverso {
 
   /**
    * Elimina una dimension
+   * @throws Error si el ID no existe en la base de datos
+   * @remarks Al eliminar una dimension, los personajes que tengan esa dimension como origen pasan a ser desconocidos y sin origen, y se añade un aviso en su descripcion
    */
   public async removeDimension(id: string): Promise<void> {
     const dimIndex = this.data.dimensiones.findIndex((d) => d.id === id);
@@ -108,6 +114,8 @@ export class GestorMultiverso {
 
   /**
    * Añade un nuevo artefacto
+   * @param newArtifact - Objeto que debe cumplir con la interfaz IntArtefactos
+   * @throws Error - si el ID ya existe o si el inventor no esta registrado en el sistema
    */
   public async addArtifact(newArtifact: IntArtefactos): Promise<void> {
     if (this.data.artefactos.some((a) => a.id === newArtifact.id)) {
@@ -124,6 +132,10 @@ export class GestorMultiverso {
 
   /**
    * Actualiza un artefacto existente.
+   * @param id - El ID del artefacto a actualizar
+   * @param updatedArtifact - Un objeto con los nuevos datos del artefacto
+   * @throws Error si el ID original no existe o si el nuevo ID ya esta en uso por otro artefacto
+   * @remarks Si se cambia el inventor a uno que no esta registrado, se lanza un error y no se actualiza el artefacto
    */
   public async updateArtifact(
     id: string,
@@ -144,6 +156,9 @@ export class GestorMultiverso {
 
   /**
    * Elimina un artefacto del sistema.
+   * @param id - El ID del artefacto a eliminar
+   * @throws Error si el ID no existe en la base de datos
+   * @remarks Al eliminar un artefacto, se añade un aviso en la descripcion de su inventor indicando que el artefacto ha sido eliminado
    */
   public async deleteArtifact(id: string): Promise<void> {
     const index = this.data.artefactos.findIndex((a) => a.id === id);
@@ -153,10 +168,19 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Retorna una lista con todos los personajes registrados en el sistema
+   * @returns Un array con todos los personajes
+   */
   public getAllCharacters(): IntPersonajes[] {
     return [...this.data.personajes];
   }
 
+  /**
+   * Metodo para añadir un nuevo personaje al sistema
+   * @throws Error si el ID del personaje ya existe o si la dimension de origen no esta registrada en el sistema
+   * @param newCharacter - Objeto que debe cumplir con la interfaz IntPersonajes
+   */
   public async addCharacter(newCharacter: IntPersonajes): Promise<void> {
     if (this.data.personajes.some((p) => p.id === newCharacter.id)) {
       throw new Error(`El personaje con ID '${newCharacter.id}' ya existe`);
@@ -172,6 +196,12 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Actualiza un personaje existente.
+   * @param id - El ID del personaje a actualizar
+   * @param updatedCharacter - Un objeto con los nuevos datos del personaje
+   * @throws Error si el ID original no existe o si el nuevo ID ya esta en uso por otro personaje
+   */
   public async updateCharacter(
     id: string,
     updatedCharacter: IntPersonajes,
@@ -190,6 +220,12 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Metodo para eliminar un personaje del sistema
+   * @throws Error si el ID del personaje no existe en el sistema
+   * @remarks Al eliminar un personaje, se añade un aviso en la descripcion de los artefactos que haya inventado indicando que el inventor ha sido eliminado
+   * @param id - El ID del personaje a eliminar
+   */
   public async deleteCharacter(id: string): Promise<void> {
     const index = this.data.personajes.findIndex((p) => p.id === id);
     if (index === -1) {
@@ -204,10 +240,19 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Metodo para obtener todas las localizaciones registradas en el sistema
+   * @returns Un array con todas las localizaciones
+   */
   public getAllLocations(): IntLocalizacion[] {
     return [...this.data.localizaciones];
   }
 
+  /**
+   * Metodo para añadir una nueva localizacion al sistema
+   * @param newLocation - Objeto que debe cumplir con la interfaz IntLocalizacion
+   * @throws Error si el ID de la localizacion ya existe o si la dimension asociada no esta registrada en el sistema
+   */
   public async addLocation(newLocation: IntLocalizacion): Promise<void> {
     if (this.data.localizaciones.some((l) => l.id === newLocation.id)) {
       throw new Error(`La localizacion con ID '${newLocation.id}' ya existe.`);
@@ -221,6 +266,12 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Metodo para actualizar una localizacion existente
+   * @param id - El ID de la localizacion a actualizar
+   * @param updatedLocation - Un objeto con los nuevos datos de la localizacion
+   * @throws Error si el ID original no existe o si el nuevo ID ya esta en uso por otra localizacion
+   */
   public async updateLocation(
     id: string,
     updatedLocation: IntLocalizacion,
@@ -239,6 +290,11 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Metodo para eliminar una localizacion del sistema
+   * @param id - El ID de la localizacion a eliminar
+   * @throws Error si el ID de la localizacion no existe en el sistema
+   */
   public async deleteLocation(id: string): Promise<void> {
     const index = this.data.localizaciones.findIndex((l) => l.id === id);
     if (index === -1) throw new Error('No existe la localizacion a eliminar');
@@ -248,9 +304,10 @@ export class GestorMultiverso {
 
   /**
    * Registra el movimiento de un personaje entre dimensiones
-   * @param IdPersonaje ID del viajero
-   * @param IdDestino ID de la dimension de llegada
-   * @param motivo Razon del viaje (ej: "Escapar de la Ciudadela")
+   * @param IdPersonaje - ID del viajero
+   * @param IdDestino - ID de la dimension de llegada
+   * @param motivo - Razon del viaje (ej: "Escapar de la Ciudadela")
+   * @throws Error si el personaje o la dimension destino no existen en el sistema
    */
   public async registrarViaje(
     IdPersonaje: string,
@@ -274,10 +331,19 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Metodo para obtener todas las especies registradas en el sistema
+   * @returns Array con todas las especies
+   */
   public getAllSpecies(): IntEspecies[] {
     return [...this.data.especies];
   }
 
+  /**
+   * Metodo para añadir una nueva especie al sistema
+   * @param newSpecies - Objeto que debe cumplir con la interfaz IntEspecies
+   * @throws Error si el ID de la especie ya existe o si la dimension de origen no esta registrada en el sistema
+   */
   public async addSpecies(newSpecies: IntEspecies): Promise<void> {
     if (this.data.especies.some((e) => e.id === newSpecies.id)) {
       throw new Error(`La especie con ID '${newSpecies.id}' ya existe.`);
@@ -289,6 +355,12 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Metodo para actualizar una especie existente en el sistema
+   * @param id - El ID de la especie a actualizar
+   * @param updatedSpecies - Un objeto con los nuevos datos de la especie
+   * @throws Error si el ID original no existe o si el nuevo ID ya esta en uso por otra especie
+   */
   public async updateSpecies(
     id: string,
     updatedSpecies: IntEspecies,
@@ -305,6 +377,11 @@ export class GestorMultiverso {
     await almacen.write();
   }
 
+  /**
+   * Metodo para eliminar una especie del sistema
+   * @param id - El ID de la especie a eliminar
+   * @throws Error si el ID de la especie no existe en el sistema
+   */
   public async deleteSpecies(id: string): Promise<void> {
     const index = this.data.especies.findIndex((e) => e.id === id);
     if (index === -1) throw new Error('No existe la especie a eliminar');
@@ -355,6 +432,11 @@ export class GestorMultiverso {
     return resultados;
   }
 
+  /**
+   * Metodo para buscar artefactos bajo multiples criterios
+   * @param filtros - Filtros posibles de busqueda
+   * @returns Un array con los artefactos que cumplen con los criterios de busqueda
+   */
   public buscarArtefactos(
     filtros: Partial<{
       nombre: string;
@@ -388,6 +470,11 @@ export class GestorMultiverso {
     return resultados;
   }
 
+  /**
+   * Metodo para localizar versiones alternativas de un personaje dado su nombre
+   * @param nombre - El nombre del personaje a buscar (puede ser parcial, se ignoran mayusculas y espacios)
+   * @returns Un array con las versiones alternativas del personaje
+   */
   public localizarVersionesAlternativas(nombre: string): IntPersonajes[] {
     const target = nombre.trim().toLowerCase();
     if (!target) return [];

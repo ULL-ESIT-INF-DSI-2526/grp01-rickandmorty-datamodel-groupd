@@ -1,5 +1,10 @@
 import type { IntPersonajes } from '../../models/interfaces.js';
 
+/**
+ * Función auxiliar para extraer un valor numérico de un campo que puede ser un número directo o un objeto con una propiedad 'nivel' o '_nivel'.
+ * @param value - El valor a evaluar, que puede ser un número o un objeto con una propiedad 'nivel' o '_nivel'.
+ * @returns Valor numérico extraído o 0 si no se encuentra un valor válido.
+ */
 export function nivelValue(value: unknown): number {
   if (typeof value === 'number') return value;
   if (value && typeof value === 'object') {
@@ -11,6 +16,11 @@ export function nivelValue(value: unknown): number {
   return 0;
 }
 
+/**
+ * Imprime una tabla con la información de los personajes proporcionados.
+ * Si no se encuentran personajes, muestra un mensaje indicando que no se han encontrado resultados.
+ * @param characters - Array de objetos que cumplen con la interfaz IntPersonajes, cuyos datos se mostrarán en la tabla.
+ */
 export function printCharacter(characters: IntPersonajes[]) {
   if (characters.length === 0) {
     console.log('No se han encontrado personajes con ese filtro');
@@ -29,6 +39,11 @@ export function printCharacter(characters: IntPersonajes[]) {
   }
 }
 
+/**
+ * Imprime una tabla con la información de las dimensiones proporcionadas.
+ * Si no se encuentran dimensiones, muestra un mensaje indicando que no hay dimensiones registradas.
+ * @param dimensions - Array de objetos que cumplen con la interfaz IntDimensiones, cuyos datos se mostrarán en la tabla.
+ */
 export function printDimensions(
   dimensions: import('../../models/interfaces.js').IntDimensiones[],
 ) {
@@ -47,6 +62,11 @@ export function printDimensions(
   );
 }
 
+/**
+ * Imprime una tabla con la información de las localizaciones proporcionadas.
+ * Si no se encuentran localizaciones, muestra un mensaje indicando que no se han encontrado resultados.
+ * @param locations - Array de objetos que cumplen con la interfaz IntLocalizacion, cuyos datos se mostrarán en la tabla.
+ */
 export function printLocations(
   locations: import('../../models/interfaces.js').IntLocalizacion[],
 ) {
@@ -67,6 +87,11 @@ export function printLocations(
   );
 }
 
+/**
+ * Imprime una tabla con la información de las especies proporcionadas.
+ * Si no se encuentran especies, muestra un mensaje indicando que no hay especies registradas.
+ * @param species - Array de objetos que cumplen con la interfaz IntEspecies, cuyos datos se mostrarán en la tabla.
+ */
 export function printSpecies(
   species: import('../../models/interfaces.js').IntEspecies[],
 ) {
@@ -87,6 +112,11 @@ export function printSpecies(
   );
 }
 
+/**
+ * Imprime una tabla con la información de los artefactos proporcionados.
+ * Si no se encuentran artefactos, muestra un mensaje indicando que no hay inventos registrados.
+ * @param artifacts - Array de objetos que cumplen con la interfaz IntArtefactos, cuyos datos se mostrarán en la tabla.
+ */
 export function printArtifacts(
   artifacts: import('../../models/interfaces.js').IntArtefactos[],
 ) {

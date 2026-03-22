@@ -1,19 +1,6 @@
 {
   "dimensiones": [
     {
-<<<<<<< HEAD
-      "id": "NULL",
-      "nombre": "Destruida",
-      "estado": "Activa",
-      "nivel_tec": {
-        "_nivel": 10
-      },
-      "descripcion": "Origen de Rick"
-    },
-    {
-      "id": "C-131",
-      "nombre": "Tierra C-131",
-=======
       "nombre": "C-137",
       "estado": "Activa",
       "nivel_tec": {
@@ -87,39 +74,10 @@
     },
     {
       "nombre": "35-C",
->>>>>>> 22d8a6ec322038e9b4fb5507ccf35e6a8c9073f4
       "estado": "Activa",
       "nivel_tec": {
         "_nivel": 10
       },
-<<<<<<< HEAD
-      "descripcion": "Origen de Rick"
-    }
-  ],
-  "personajes": [
-    {
-      "id": "P-01",
-      "nombre": "Rick Sanchez",
-      "especie": {
-        "id": "ESP-01",
-        "nombre": "Humano",
-        "descripcion": "Sapiens",
-        "origen": {
-          "id": "NULL",
-          "nombre": "Destruida",
-          "estado": "Activa",
-          "nivel_tec": {
-            "_nivel": 10
-          },
-          "descripcion": "Origen de Rick"
-        },
-        "tipo": "Humanoide",
-        "esperanza_vida": 80
-      },
-      "dim_origen": {
-        "id": "NULL",
-        "nombre": "Destruida",
-=======
       "descripcion": "Mega-Arboles",
       "id": "D9"
     },
@@ -280,14 +238,10 @@
       "descripcion": "Flotan en el espacio",
       "origen": {
         "nombre": "Cromulon",
->>>>>>> 22d8a6ec322038e9b4fb5507ccf35e6a8c9073f4
         "estado": "Activa",
         "nivel_tec": {
           "_nivel": 10
         },
-<<<<<<< HEAD
-        "descripcion": "Origen de Rick"
-=======
         "descripcion": "Cabezas gigantes",
         "id": "D13"
       },
@@ -1708,73 +1662,14 @@
         },
         "descripcion": "Dimension original",
         "id": "D1"
->>>>>>> 22d8a6ec322038e9b4fb5507ccf35e6a8c9073f4
       },
       "estado": "Desconocido",
       "afiliacion": "Independiente",
       "nivel_inteligencia": {
         "_nivel": 10
       },
-<<<<<<< HEAD
-      "descripcion": "Científico [AVISO: Dimension de origen destruida] ",
-      "localizacion": {
-        "id": "C-131",
-        "nombre": "Tierra C-131",
-        "estado": "Activa",
-        "nivel_tec": {
-          "_nivel": 10
-        },
-        "descripcion": "Origen de Rick"
-      }
-    }
-  ],
-  "especies": [],
-  "localizaciones": [],
-  "artefactos": [],
-  "regEventos": [
-    {
-      "fecha": "2026-03-22T20:53:54.974Z",
-      "descripcion": "Viaje registrado: Rick Sanchez ha saltado de Destruida a Tierra C-131"
-    }
-  ]
-=======
       "descripcion": "El original",
       "id": "P30"
-    },
-    {
-      "nombre": "Bart",
-      "especie": {
-        "nombre": "Humano",
-        "descripcion": "Bipedos normales",
-        "origen": {
-          "nombre": "C-137",
-          "estado": "Activa",
-          "nivel_tec": {
-            "_nivel": 9
-          },
-          "descripcion": "Dimension original",
-          "id": "D1"
-        },
-        "tipo": "Humanoide",
-        "esperanza_vida": 80,
-        "id": "S1"
-      },
-      "dim_origen": {
-        "nombre": "Avispa",
-        "estado": "Activa",
-        "nivel_tec": {
-          "_nivel": 8
-        },
-        "descripcion": "Avispas gigantes",
-        "id": "D5"
-      },
-      "estado": "Robot-sustituto",
-      "afiliacion": "Independiente",
-      "nivel_inteligencia": {
-        "_nivel": 2
-      },
-      "descripcion": "simpson",
-      "id": "P31"
     }
   ],
   "artefactos": [
@@ -2440,5 +2335,4 @@
     }
   ],
   "historialViajes": []
->>>>>>> 22d8a6ec322038e9b4fb5507ccf35e6a8c9073f4
 }
