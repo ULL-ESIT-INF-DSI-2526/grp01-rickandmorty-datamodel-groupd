@@ -10,6 +10,7 @@ export const almacen = new Low<IntAlmacen>(adaptador, {
   especies: [],
   localizaciones: [],
   artefactos: [],
+  regEventos: []
 });
 
 export async function inizilizarAlmacen() {
@@ -20,6 +21,7 @@ export async function inizilizarAlmacen() {
     especies: [],
     localizaciones: [],
     artefactos: [],
+    regEventos: []
   };
   await almacen.write();
 }

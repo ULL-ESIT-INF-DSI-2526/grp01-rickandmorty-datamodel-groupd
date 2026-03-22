@@ -10,4 +10,5 @@ export interface IntAlmacen {
   especies: Especies[];
   localizaciones: Localizacion[];
   artefactos: Artefacto[];
+  regEventos: Evento[];
 }
