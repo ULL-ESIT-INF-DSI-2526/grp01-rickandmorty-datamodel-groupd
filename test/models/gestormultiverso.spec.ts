@@ -669,4 +669,124 @@ describe('GestorMultiverso', () => {
       ).rejects.toThrow('El nuevo ID de especie ya esta registrado.');
     });
   });
+
+  describe('Reportes', () => {
+    it('debe generar informe de dimensiones activas', async () => {
+      const consoleSpy = vi.spyOn(console, 'log');
+      await gestor.addDimension(mockDim);
+      gestor.reporteDimensionesActivas();
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('--- DIMENSIONES ACTIVAS ---'),
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Nivel Tecnológico Medio'),
+      );
+      consoleSpy.mockRestore();
+    });
+
+    it('debe mostrar mensaje cuando no hay dimensiones activas', async () => {
+      const consoleSpy = vi.spyOn(console, 'log');
+      gestor.reporteDimensionesActivas();
+      expect(consoleSpy).toHaveBeenCalledWith(
+        'No hay dimensiones activas en este momento.',
+      );
+      consoleSpy.mockRestore();
+    });
+
+    it('debe generar informe de personajes con más versiones', async () => {
+      const rick1: IntPersonajes = {
+        ...mockPersonaje,
+        id: 'P-01',
+        nombre: 'Rick Sanchez',
+      };
+      const rick2: IntPersonajes = {
+        ...mockPersonaje,
+        id: 'P-02',
+        nombre: 'Rick Sanchez',
+      };
+      const consoleSpy = vi.spyOn(console, 'log');
+      await gestor.addDimension(mockDim);
+      await gestor.addCharacter(rick1);
+      await gestor.addCharacter(rick2);
+      gestor.reportePersonajesMasVersiones();
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Rick Sanchez: 2 versiones registradas'),
+      );
+      consoleSpy.mockRestore();
+    });
+
+    it('debe mostrar mensaje cuando no hay personajes con versiones alternativas', async () => {
+      const consoleSpy = vi.spyOn(console, 'log');
+      await gestor.addDimension(mockDim);
+      await gestor.addCharacter(mockPersonaje);
+      gestor.reportePersonajesMasVersiones();
+      expect(consoleSpy).toHaveBeenCalledWith(
+        'No hay personajes con versiones alternativas registradas.',
+      );
+      consoleSpy.mockRestore();
+    });
+
+    it('debe generar informe de inventos más peligrosos', async () => {
+      const mockArt: IntArtefactos = {
+        id: 'A-01',
+        nombre: 'Portal Gun',
+        inventor: mockPersonaje,
+        tipo: TipoArtefacto.DispositivoViaje,
+        nivel_peligrosidad: new Nivel(9),
+        descripcion: 'Viaje interdimensional',
+        info: () => 'Texto de prueba',
+      };
+      const consoleSpy = vi.spyOn(console, 'log');
+      await gestor.addDimension(mockDim);
+      await gestor.addCharacter(mockPersonaje);
+      await gestor.addArtifact(mockArt);
+      gestor.reporteInventosPeligrosos();
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Portal Gun'),
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Rick Sanchez'),
+      );
+      consoleSpy.mockRestore();
+    });
+
+    it('debe mostrar mensaje cuando no hay inventos registrados', async () => {
+      const consoleSpy = vi.spyOn(console, 'log');
+      gestor.reporteInventosPeligrosos();
+      expect(consoleSpy).toHaveBeenCalledWith('No hay inventos registrados.');
+      consoleSpy.mockRestore();
+    });
+
+    it('debe generar informe del historial de viajes de un personaje', async () => {
+      const dimDestino: IntDimensiones = {
+        ...mockDim,
+        id: 'C-131',
+        nombre: 'Tierra C-131',
+      };
+      const consoleSpy = vi.spyOn(console, 'log');
+      await gestor.addDimension(mockDim);
+      await gestor.addDimension(dimDestino);
+      await gestor.addCharacter(mockPersonaje);
+      await gestor.registrarViaje('P-01', 'C-131');
+      gestor.reporteHistorialViajes('Rick Sanchez');
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('HISTORIAL DE VIAJES: RICK SANCHEZ'),
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Viaje registrado'),
+      );
+      consoleSpy.mockRestore();
+    });
+
+    it('debe mostrar mensaje cuando no hay viajes registrados para un personaje', async () => {
+      const consoleSpy = vi.spyOn(console, 'log');
+      await gestor.addDimension(mockDim);
+      await gestor.addCharacter(mockPersonaje);
+      gestor.reporteHistorialViajes('Rick Sanchez');
+      expect(consoleSpy).toHaveBeenCalledWith(
+        'No se han registrado viajes para este personaje.',
+      );
+      consoleSpy.mockRestore();
+    });
+  });
 });
